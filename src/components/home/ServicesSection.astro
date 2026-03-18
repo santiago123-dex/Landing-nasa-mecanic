@@ -1,0 +1,30 @@
+---
+import SectionHeader from '../common/SectionHeader.astro';
+import ServiceRow from './ServiceRow.astro';
+import Icon from '../common/Icon.astro';
+import { services } from '../../data/site';
+---
+
+<section id="servicios" class="py-12">
+  <SectionHeader title={'Protocolos\nde Servicio'} tag="SEC: 01" multiline />
+
+  <div id="services-loading" class="flex flex-col items-center gap-8 border-t border-black/10 px-4 py-24">
+    <div class="text-nasa-accent">
+      <Icon name="settings" class="size-12 animate-spin-slow" />
+    </div>
+
+    <div class="w-full max-w-2xl">
+      <div class="mb-3 flex items-center justify-between gap-4 font-mono text-[10px] font-bold tracking-[0.18em] text-black/50">
+        <span>RECUPERANDO DATOS DEL SERVIDOR</span>
+        <span id="loading-progress-value" class="text-nasa-accent">0%</span>
+      </div>
+      <div class="h-0.5 overflow-hidden bg-black/10">
+        <div id="loading-progress-bar" class="h-full w-0 bg-nasa-accent transition-[width] duration-150 ease-linear"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services-grid" class="hidden border-t border-black/10">
+    {services.map((service) => <ServiceRow {...service} />)}
+  </div>
+</section>

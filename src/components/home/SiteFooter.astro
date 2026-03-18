@@ -1,0 +1,12 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="flex flex-col gap-4 border-t border-black/10 pt-12 pb-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-black/45 md:flex-row md:items-center md:justify-between">
+  <div>© {currentYear} NASA AUTO LAB. TODOS LOS DERECHOS RESERVADOS.</div>
+  <div class="flex flex-wrap gap-4 md:gap-6">
+    <a class="transition hover:text-nasa-accent" href="#">Terminos</a>
+    <a class="transition hover:text-nasa-accent" href="#">Privacidad</a>
+    <a class="transition hover:text-nasa-accent" href="#">Protocolos de Seguridad</a>
+  </div>
+</footer>

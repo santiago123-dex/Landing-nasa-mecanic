@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: readonly string[];
+  image?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, keywords = [], image = '/og-nasa-auto-lab.svg', schema } = Astro.props;
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+const socialImageUrl = Astro.site ? new URL(image, Astro.site).toString() : image;
+const schemaMarkup = schema ? JSON.stringify(schema) : undefined;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="NASA Auto Lab" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#e3000f" />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:site_name" content="NASA Auto Lab" />
+    <meta property="og:locale" content="es_CO" />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    {schemaMarkup && <script is:inline type="application/ld+json" set:html={schemaMarkup}></script>}
+  </head>
+  <body class="m-0 font-sans text-nasa-text selection:bg-nasa-accent selection:text-white">
+    <slot />
+  </body>
+</html>
