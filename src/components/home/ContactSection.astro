@@ -4,17 +4,17 @@ import Icon from '../common/Icon.astro';
 import { whatsappUrl } from '../../data/site';
 ---
 
-<section id="contacto" class="py-24">
+<section id="contacto" class="py-16 md:py-24">
   <SectionHeader title="Iniciar Secuencia" tag="SEC: 03" />
 
   <div
     data-reveal
-    class="relative overflow-hidden border border-black/10 bg-nasa-surface p-6 opacity-0 transition duration-700 ease-out translate-y-8 md:p-12"
+    class="relative overflow-hidden border border-black/10 bg-nasa-surface p-5 opacity-0 transition duration-700 ease-out translate-y-8 sm:p-6 md:p-12"
   >
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, black 1px, transparent 0); background-size: 24px 24px;"></div>
 
     <div class="relative z-10">
-      <div class="mb-12 font-mono text-xs font-bold leading-relaxed text-nasa-accent md:text-sm">
+      <div class="mb-10 font-mono text-[11px] font-bold leading-relaxed text-nasa-accent sm:text-xs md:mb-12 md:text-sm">
         &gt; INICIALIZANDO ENLACE DE COMUNICACION...
         <br />
         &gt; ENRUTANDO A CANAL EXTERNO (WHATSAPP)... [OK]
@@ -22,19 +22,19 @@ import { whatsappUrl } from '../../data/site';
         &gt; ESTADO: ESPERANDO TRANSMISION DEL USUARIO
       </div>
 
-      <div class="grid gap-12 lg:grid-cols-2">
+      <div class="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
         <div class="flex max-w-2xl flex-col justify-center">
-          <p class="mb-8 font-mono text-xs font-bold leading-relaxed text-black/60 md:text-sm">
+          <p class="mb-6 font-mono text-[11px] font-bold leading-relaxed text-black/60 sm:mb-8 sm:text-xs md:text-sm">
             PARA GARANTIZAR LA MAXIMA EFICIENCIA Y ATENCION PERSONALIZADA, TODAS LAS RESERVAS Y CONSULTAS SE GESTIONAN A TRAVES DE NUESTRO CANAL DIRECTO DE WHATSAPP.
           </p>
 
           <a
             id="whatsapp-button"
             href={whatsappUrl}
-            class="inline-flex w-full items-center justify-center gap-4 bg-black px-8 py-4 font-display text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-nasa-accent md:w-auto md:text-sm"
+            class="inline-flex w-full items-center justify-center gap-3 bg-black px-5 py-4 text-center font-display text-[11px] font-bold uppercase tracking-[0.14em] text-white transition hover:bg-nasa-accent sm:px-8 sm:text-xs md:w-auto md:text-sm md:tracking-[0.18em]"
           >
             <span data-whatsapp-spinner class="hidden size-[1.1rem] animate-spin rounded-full border-2 border-white/35 border-t-white"></span>
-            <span data-whatsapp-default class="inline-flex items-center gap-4">
+            <span data-whatsapp-default class="inline-flex items-center gap-3 sm:gap-4">
               <Icon name="message" class="size-5" />
               <span>Conectar via WhatsApp</span>
               <Icon name="chevron" class="size-4 transition group-hover:translate-x-1" />
@@ -45,8 +45,8 @@ import { whatsappUrl } from '../../data/site';
           </a>
         </div>
 
-        <div class="group relative min-h-[20rem] overflow-hidden border border-black/10 bg-nasa-surface">
-          <div class="absolute left-4 top-4 z-10 inline-flex items-center gap-2 border border-black/10 bg-white/95 px-3 py-2 font-mono text-[10px] font-bold tracking-[0.16em] shadow-sm">
+        <div class="group relative min-h-[18rem] overflow-hidden border border-black/10 bg-nasa-surface sm:min-h-[20rem]">
+          <div class="absolute left-3 top-3 z-10 inline-flex max-w-[calc(100%-1.5rem)] items-center gap-2 border border-black/10 bg-white/95 px-3 py-2 font-mono text-[10px] font-bold tracking-[0.16em] shadow-sm sm:left-4 sm:top-4">
             <span class="size-2 rounded-full bg-nasa-accent animate-pulse-soft"></span>
             UBICACION_ACTUAL
           </div>
@@ -55,7 +55,7 @@ import { whatsappUrl } from '../../data/site';
             title="NASA Auto Lab Location"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            class="h-full min-h-[20rem] w-full border-0 opacity-80 grayscale transition duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+            class="h-full min-h-[18rem] w-full border-0 opacity-80 grayscale transition duration-700 group-hover:opacity-100 group-hover:grayscale-0 sm:min-h-[20rem]"
           ></iframe>
         </div>
       </div>

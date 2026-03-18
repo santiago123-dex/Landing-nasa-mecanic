@@ -7,6 +7,8 @@
   const loadingBar = document.querySelector('#loading-progress-bar');
   const rows = Array.from(document.querySelectorAll('[data-service-row]'));
   const whatsappButton = document.querySelector('#whatsapp-button');
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobileNav = document.querySelector('[data-mobile-nav]');
 
   const revealObserver = new IntersectionObserver(
     (entries) => {
@@ -22,6 +24,21 @@
   );
 
   document.querySelectorAll('[data-reveal]').forEach((node) => revealObserver.observe(node));
+
+  menuToggle?.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    mobileNav?.classList.toggle('hidden', expanded);
+    mobileNav?.classList.toggle('flex', !expanded);
+  });
+
+  mobileNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.add('hidden');
+      mobileNav.classList.remove('flex');
+    });
+  });
 
   window.setTimeout(() => {
     bootScreen?.classList.add('hidden');

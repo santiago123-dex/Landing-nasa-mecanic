@@ -5,7 +5,7 @@ import Icon from '../common/Icon.astro';
 const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 ---
 
-<section id="instalaciones" class="py-24">
+<section id="instalaciones" class="py-16 md:py-24">
   <SectionHeader title="El Laboratorio" tag="SEC: 02" />
 
   <div class="grid gap-4 md:grid-cols-3">
@@ -16,7 +16,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
         referrerpolicy="no-referrer"
         class="absolute inset-0 h-full w-full object-cover opacity-60 grayscale mix-blend-multiply transition duration-700 group-hover:opacity-100 group-hover:grayscale-0"
       />
-      <div class="relative z-10 flex min-h-[22rem] flex-col justify-end bg-linear-to-t from-white/95 via-white/70 to-transparent p-6 md:p-8">
+      <div class="relative z-10 flex min-h-[18rem] flex-col justify-end bg-linear-to-t from-white/95 via-white/70 to-transparent p-5 sm:min-h-[22rem] md:p-8">
         <div class="mb-2 flex items-center gap-3">
           <span class="size-2 rounded-full bg-nasa-accent animate-pulse-soft"></span>
           <p class="m-0 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-black/70">Camara 01 // Area Limpia</p>
@@ -26,7 +26,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       </div>
     </article>
 
-    <article data-reveal style="transition-delay:120ms" class={`${reveal} flex flex-col justify-between border border-nasa-accent bg-nasa-accent p-8 text-white`}>
+    <article data-reveal style="transition-delay:120ms" class={`${reveal} flex flex-col justify-between border border-nasa-accent bg-nasa-accent p-6 text-white sm:p-8`}>
       <Icon name="cpu" class="mb-8 size-12" />
       <div>
         <h3 class="m-0 font-display text-2xl font-bold uppercase leading-tight">
@@ -40,13 +40,13 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       </div>
     </article>
 
-    <article data-reveal style="transition-delay:220ms" class={`${reveal} border border-black/10 bg-nasa-surface p-8`}>
+    <article data-reveal style="transition-delay:220ms" class={`${reveal} border border-black/10 bg-nasa-surface p-6 sm:p-8`}>
       <Icon name="gauge" class="mb-4 size-8 text-nasa-accent" />
       <div class="mb-2 font-display text-5xl font-bold">99.9%</div>
       <p class="m-0 font-mono text-xs font-bold uppercase tracking-[0.16em] text-black/50">Tasa de precision en diagnostico inicial</p>
     </article>
 
-    <article data-reveal class={`${reveal} border border-black/10 bg-nasa-surface p-8 md:col-span-2`}>
+    <article data-reveal class={`${reveal} border border-black/10 bg-nasa-surface p-6 sm:p-8 md:col-span-2`}>
       <h3 class="mb-2 font-display text-xl font-bold uppercase">Transparencia Absoluta</h3>
       <p class="m-0 max-w-3xl font-mono text-xs leading-relaxed font-medium text-black/60">
         Recibe un reporte digital interactivo con fotografias, lecturas de sensores y explicaciones detalladas antes de autorizar cualquier procedimiento. Tu tienes el control total de la consola.

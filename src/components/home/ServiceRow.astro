@@ -26,16 +26,16 @@ const { id, title, desc, icon, details } = Astro.props;
     type="button"
     data-service-toggle
     aria-expanded="false"
-    class="group w-full cursor-pointer px-0 py-8 text-left md:px-4"
+    class="group w-full cursor-pointer px-0 py-6 text-left sm:py-8 md:px-4"
   >
     <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-      <div class="flex items-center gap-6 md:mr-8 md:gap-12">
-        <span class="min-w-16 font-mono text-xs font-bold text-black/50 transition group-hover:text-white/60">{id}</span>
-        <h3 class="font-display text-xl font-bold uppercase tracking-[-0.04em] md:text-3xl">{title}</h3>
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6 md:mr-8 md:gap-12">
+        <span class="min-w-16 font-mono text-[11px] font-bold text-black/50 transition group-hover:text-white/60 md:text-xs">{id}</span>
+        <h3 class="font-display text-lg font-bold uppercase tracking-[-0.04em] sm:text-xl md:text-3xl">{title}</h3>
       </div>
 
       <div class="flex flex-col gap-4 md:w-1/2 md:flex-row md:items-center md:justify-between">
-        <p class="max-w-[34rem] font-mono text-[11px] leading-[1.8] font-medium text-black/60 transition group-hover:text-white/80 md:text-xs">
+        <p class="max-w-[34rem] font-mono text-[11px] leading-[1.8] font-medium text-black/60 transition group-hover:text-white/80 sm:text-xs">
           {desc}
         </p>
 
@@ -47,14 +47,14 @@ const { id, title, desc, icon, details } = Astro.props;
       </div>
     </div>
 
-    <div class="mt-4 flex justify-end text-nasa-accent md:hidden">
+    <div class="mt-2 flex justify-end text-nasa-accent md:hidden">
       <span data-plus class="font-display text-2xl font-bold">+</span>
       <span data-minus class="hidden font-display text-2xl font-bold">−</span>
     </div>
   </button>
 
   <div data-service-details class="hidden overflow-hidden">
-    <div class="grid gap-8 border-t border-white/20 py-8 md:grid-cols-3 md:px-4">
+    <div class="grid gap-8 border-t border-white/20 py-6 sm:py-8 md:grid-cols-3 md:px-4">
       <div>
         <h4 class="mb-3 font-mono text-[10px] font-bold tracking-[0.18em] text-nasa-accent">TIEMPO ESTIMADO (T-MINUS)</h4>
         <p class="m-0 font-display text-3xl font-bold">{details.time}</p>

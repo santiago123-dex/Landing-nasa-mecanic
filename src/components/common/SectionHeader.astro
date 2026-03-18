@@ -10,10 +10,19 @@ const { title, tag, multiline = false } = Astro.props;
 
 <div
   data-reveal
-  class="mb-16 flex flex-col items-start justify-between gap-4 opacity-0 transition duration-700 ease-out translate-y-8 md:flex-row md:items-end"
+  class="mb-10 flex flex-col items-start justify-between gap-4 opacity-0 transition duration-700 ease-out translate-y-8 md:mb-16 md:flex-row md:items-end"
 >
-  <h2 class="font-display text-4xl font-bold uppercase tracking-[-0.06em] md:text-6xl">
-    {multiline ? title.split('\n').map((line) => <><span>{line}</span><br /></>) : title}
+  <h2 class="font-display text-4xl leading-[0.95] font-bold uppercase tracking-[-0.06em] md:text-6xl">
+    {
+      multiline
+        ? title.split('\n').map((line, index, lines) => (
+            <>
+              <span>{line}</span>
+              {index < lines.length - 1 && <br />}
+            </>
+          ))
+        : title
+    }
   </h2>
   <span class="border border-nasa-accent px-3 py-1 font-mono text-xs font-bold tracking-[0.18em] text-nasa-accent">
     {tag}
