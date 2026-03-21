@@ -1,30 +1,96 @@
 ---
-import SectionHeader from '../common/SectionHeader.astro';
-import ServiceRow from './ServiceRow.astro';
-import Icon from '../common/Icon.astro';
-import { services } from '../../data/site';
+import { services, whatsappUrl } from '../../data/site';
+
+const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 ---
 
-<section id="servicios" class="py-8 md:py-12">
-  <SectionHeader title={'Protocolos\nde Servicio'} tag="SEC: 01" multiline />
+<section
+  id="servicios"
+  class="mt-10 border-t border-black/6 px-1 py-14 sm:px-3 sm:py-16"
+>
+  <div data-reveal class={reveal}>
+    <span class="inline-flex items-center gap-2 rounded-full bg-[#fff2f3] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-nasa-accent">
+      <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 12h4l2-5 4 10 2-5h6" />
+        <path d="M18 5v4M16 7h4" />
+      </svg>
+      Servicios
+    </span>
 
-  <div id="services-loading" class="flex flex-col items-center gap-8 border-t border-black/10 px-4 py-16 sm:py-20 md:py-24">
-    <div class="text-nasa-accent">
-      <Icon name="settings" class="size-12 animate-spin-slow" />
-    </div>
+    <h2 class="mt-8 mb-0 max-w-[9ch] font-display text-[clamp(2.8rem,6vw,4.5rem)] leading-[1.03] font-bold tracking-[-0.07em] text-nasa-text">
+      Cuidado integral para tu maquina
+    </h2>
 
-    <div class="w-full max-w-2xl">
-      <div class="mb-3 flex items-center justify-between gap-4 font-mono text-[10px] font-bold tracking-[0.18em] text-black/50">
-        <span>RECUPERANDO DATOS DEL SERVIDOR</span>
-        <span id="loading-progress-value" class="text-nasa-accent">0%</span>
-      </div>
-      <div class="h-0.5 overflow-hidden bg-black/10">
-        <div id="loading-progress-bar" class="h-full w-0 bg-nasa-accent transition-[width] duration-150 ease-linear"></div>
-      </div>
-    </div>
+    <p class="mt-8 max-w-[52rem] text-lg leading-[1.8] text-slate-500 sm:text-[1.45rem]">
+      Contamos con una amplia gama de servicios especializados, tecnologia de punta y el mejor equipo tecnico profesional para cubrir todas las necesidades de rendimiento y mantenimiento de tu vehiculo.
+    </p>
   </div>
 
-  <div id="services-grid" class="hidden border-t border-black/10">
-    {services.map((service) => <ServiceRow {...service} />)}
+  <div data-reveal style="transition-delay:120ms" class={`${reveal} relative mt-12`}>
+    <button
+      type="button"
+      data-services-prev
+      class="absolute top-[34%] left-0 z-10 hidden -translate-x-1/2 rounded-full bg-black p-5 text-white shadow-[0_16px_30px_rgba(15,23,42,0.18)] transition hover:scale-[1.03] lg:grid lg:place-items-center"
+      aria-label="Servicio anterior"
+    >
+      <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+
+    <div class="overflow-hidden">
+      <div data-services-track class="flex gap-6 transition-transform duration-500 ease-out">
+        {services.map((service) => (
+          <article
+            class="min-w-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_10px_24px_rgba(15,23,42,0.06)] md:min-w-[calc((100%-1.5rem)/2)] xl:min-w-[calc((100%-3rem)/3)]"
+          >
+            <div class="h-64 overflow-hidden bg-slate-100">
+              <img
+                src={service.image}
+                alt={service.title}
+                referrerpolicy="no-referrer"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-8">
+              <h3 class="m-0 text-[2rem] font-bold tracking-[-0.05em] text-nasa-text">{service.title}</h3>
+              <p class="mt-4 mb-0 min-h-[7.5rem] text-lg leading-[1.7] text-slate-500">{service.desc}</p>
+              <a href={whatsappUrl} class="mt-8 inline-flex items-center gap-2 text-lg font-bold text-nasa-accent">
+                Agendar Servicio
+                <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <button
+      type="button"
+      data-services-next
+      class="absolute top-[34%] right-0 z-10 hidden translate-x-1/2 rounded-full bg-black p-5 text-white shadow-[0_16px_30px_rgba(15,23,42,0.18)] transition hover:scale-[1.03] lg:grid lg:place-items-center"
+      aria-label="Servicio siguiente"
+    >
+      <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 6l6 6-6 6" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="mt-8 flex items-center justify-center gap-2" data-services-dots>
+    {services.map((_, index) => (
+      <button
+        type="button"
+        data-services-dot
+        data-index={index}
+        class:list={[
+          'size-2.5 rounded-full transition',
+          index === 0 ? 'bg-nasa-accent' : 'bg-slate-300',
+        ]}
+        aria-label={`Ir al servicio ${index + 1}`}
+      ></button>
+    ))}
   </div>
 </section>

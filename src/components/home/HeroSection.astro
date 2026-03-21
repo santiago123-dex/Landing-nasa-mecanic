@@ -1,28 +1,58 @@
 ---
+import { whatsappUrl } from '../../data/site';
+
 const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 ---
 
-<section class="flex min-h-[30rem] flex-col justify-center gap-8 pt-2 pb-6 sm:min-h-[34rem] md:min-h-[36rem] md:gap-12 md:pt-8 md:pb-12">
-  <div data-reveal class={`${reveal} max-w-5xl`}>
-    <p class="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-nasa-accent sm:mb-6 sm:text-sm">
-      &gt; Redefiniendo la mecanica tradicional
-    </p>
-    <h1 class="m-0 max-w-[9ch] font-display text-[clamp(3.45rem,14vw,8.5rem)] leading-[0.9] font-bold uppercase tracking-[-0.08em]">
-      Precision
-      <br />
-      <span class="bg-linear-to-r from-nasa-accent to-nasa-text bg-clip-text text-transparent">Clinica.</span>
+<section
+  id="inicio"
+  class="grid min-h-[calc(100vh-6rem)] gap-10 px-1 py-10 sm:px-3 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,612px)] lg:items-center lg:gap-14 lg:py-16"
+>
+  <div data-reveal class={`${reveal} flex flex-col items-start`}>
+    <span class="mb-8 inline-flex items-center gap-2 rounded-full bg-[#fff2f3] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-nasa-accent">
+      <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 12h4l2-5 4 10 2-5h6" />
+        <path d="M18 5v4M16 7h4" />
+      </svg>
+      Excelencia automotriz
+    </span>
+
+    <h1 class="m-0 text-[clamp(3.4rem,8vw,5.8rem)] leading-[0.9] tracking-[-0.08em] text-nasa-accent">
+      <span class="block font-display font-bold uppercase">NASA</span>
+      <span class="mt-2 block text-[clamp(2.6rem,6vw,4.2rem)] font-light italic text-slate-500">Auto Lab</span>
     </h1>
+
+    <p class="mt-7 max-w-[34rem] text-lg leading-[1.75] text-slate-500 sm:text-[1.55rem] sm:leading-[1.7]">
+      Ingenieria de excelencia y rigor profesional, con un equipo en constante formacion para proteger y optimizar tu vehiculo con integridad, garantizando un rendimiento de alta calidad.
+    </p>
+
+    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+      <a
+        href={whatsappUrl}
+        class="inline-flex items-center justify-center rounded-full bg-nasa-accent px-8 py-4 text-base font-bold text-white shadow-[0_16px_28px_rgba(239,12,24,0.26)] transition hover:-translate-y-0.5"
+      >
+        Agendar Cita
+      </a>
+      <a
+        href="#servicios"
+        class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-base font-bold text-nasa-text transition hover:border-slate-300 hover:bg-slate-50"
+      >
+        Nuestros Servicios
+      </a>
+    </div>
   </div>
 
-  <div
-    data-reveal
-    style="transition-delay:120ms"
-    class={`${reveal} max-w-3xl border-l-2 border-nasa-accent pl-4 font-mono text-[11px] leading-[1.9] font-semibold text-black/60 sm:pl-6 sm:text-xs md:pl-8 md:text-sm`}
-  >
-    <p class="m-0">
-      OLVIDATE DE LA GRASA, EL DESORDEN Y LAS SUPOSICIONES. NO SOMOS UN TALLER, SOMOS UN
-      LABORATORIO DE ALTO RENDIMIENTO. UTILIZAMOS TELEMETRIA AVANZADA Y ESTANDARES AEROESPACIALES
-      PARA EL DIAGNOSTICO Y OPTIMIZACION DE TU VEHICULO.
-    </p>
+  <div data-reveal style="transition-delay:120ms" class={`${reveal} relative`}>
+    <div class="overflow-hidden rounded-[2.5rem] shadow-[0_28px_60px_rgba(15,23,42,0.18)]">
+      <img
+        src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1400&q=80"
+        alt="Mecanico trabajando sobre el motor de un vehiculo"
+        referrerpolicy="no-referrer"
+        class="h-full min-h-[24rem] w-full object-cover"
+      />
+    </div>
+    <div class="absolute bottom-[-1.1rem] left-[-1.1rem] grid grid-cols-4 gap-2 rounded-2xl bg-white/90 p-3 shadow-[0_20px_50px_rgba(15,23,42,0.12)]">
+      {Array.from({ length: 12 }).map(() => <span class="size-2 rounded-full bg-[#f6c7cb]"></span>)}
+    </div>
   </div>
 </section>

@@ -1,15 +1,4 @@
 <script>
-  const bootScreen = document.querySelector('#boot-screen');
-  const siteShell = document.querySelector('#site-shell');
-  const loadingPanel = document.querySelector('#services-loading');
-  const servicesGrid = document.querySelector('#services-grid');
-  const loadingValue = document.querySelector('#loading-progress-value');
-  const loadingBar = document.querySelector('#loading-progress-bar');
-  const rows = Array.from(document.querySelectorAll('[data-service-row]'));
-  const whatsappButton = document.querySelector('#whatsapp-button');
-  const menuToggle = document.querySelector('[data-menu-toggle]');
-  const mobileNav = document.querySelector('[data-mobile-nav]');
-
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -25,6 +14,9 @@
 
   document.querySelectorAll('[data-reveal]').forEach((node) => revealObserver.observe(node));
 
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobileNav = document.querySelector('[data-mobile-nav]');
+
   menuToggle?.addEventListener('click', () => {
     const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', String(!expanded));
@@ -35,95 +27,67 @@
   mobileNav?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       menuToggle?.setAttribute('aria-expanded', 'false');
-      mobileNav.classList.add('hidden');
-      mobileNav.classList.remove('flex');
+      mobileNav?.classList.add('hidden');
+      mobileNav?.classList.remove('flex');
     });
   });
 
-  window.setTimeout(() => {
-    bootScreen?.classList.add('hidden');
-    siteShell?.classList.remove('hidden');
-  }, 2000);
+  const track = document.querySelector('[data-services-track]');
+  const prevButton = document.querySelector('[data-services-prev]');
+  const nextButton = document.querySelector('[data-services-next]');
+  const dots = Array.from(document.querySelectorAll('[data-services-dot]'));
 
-  window.setTimeout(() => {
-    let progress = 0;
-    const interval = window.setInterval(() => {
-      progress = Math.min(progress + 2, 100);
-      if (loadingValue) loadingValue.textContent = `${progress}%`;
-      if (loadingBar instanceof HTMLElement) loadingBar.style.width = `${progress}%`;
+  if (track instanceof HTMLElement) {
+    let currentIndex = 0;
+    const cards = Array.from(track.children);
 
-      if (progress >= 100) {
-        window.clearInterval(interval);
-        window.setTimeout(() => {
-          loadingPanel?.classList.add('hidden');
-          servicesGrid?.classList.remove('hidden');
-          rows.forEach((row, index) => {
-            window.setTimeout(() => {
-              row.classList.remove('opacity-0', 'translate-y-6');
-              row.classList.add('opacity-100', 'translate-y-0');
-            }, index * 100);
-          });
-        }, 150);
-      }
-    }, 36);
-  }, 2000);
+    const getVisibleCards = () => {
+      if (window.innerWidth >= 1280) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
+    };
 
-  rows.forEach((row) => {
-    const button = row.querySelector('[data-service-toggle]');
-    const details = row.querySelector('[data-service-details]');
-    const pluses = row.querySelectorAll('[data-plus]');
-    const minuses = row.querySelectorAll('[data-minus]');
-    const serviceId = row.querySelector('span');
-    const desc = row.querySelector('p');
+    const getMaxIndex = () => Math.max(dots.length - getVisibleCards(), 0);
 
-    button?.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
+    const renderSlider = () => {
+      currentIndex = Math.min(currentIndex, getMaxIndex());
 
-      row.classList.toggle('bg-zinc-950', !expanded);
-      row.classList.toggle('text-white', !expanded);
-      row.classList.toggle('border-zinc-950', !expanded);
+      const card = cards[0];
+      const gap = 24;
+      const cardWidth = card instanceof HTMLElement ? card.getBoundingClientRect().width : 0;
+      const offset = currentIndex * (cardWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
 
-      if (serviceId instanceof HTMLElement) {
-        serviceId.classList.toggle('text-white/60', !expanded);
-        serviceId.classList.toggle('text-black/50', expanded);
-      }
+      dots.forEach((dot, index) => {
+        const active = index === currentIndex;
+        dot.classList.toggle('bg-nasa-accent', active);
+        dot.classList.toggle('bg-slate-300', !active);
+      });
 
-      if (desc instanceof HTMLElement) {
-        desc.classList.toggle('text-white/80', !expanded);
-        desc.classList.toggle('text-black/60', expanded);
-      }
+      prevButton?.toggleAttribute('disabled', currentIndex === 0);
+      nextButton?.toggleAttribute('disabled', currentIndex >= getMaxIndex());
+      prevButton?.classList.toggle('opacity-40', currentIndex === 0);
+      nextButton?.classList.toggle('opacity-40', currentIndex >= getMaxIndex());
+    };
 
-      pluses.forEach((node) => node.classList.toggle('hidden', !expanded));
-      minuses.forEach((node) => node.classList.toggle('hidden', expanded));
-
-      if (details instanceof HTMLElement) details.classList.toggle('hidden', expanded);
+    prevButton?.addEventListener('click', () => {
+      currentIndex = Math.max(currentIndex - 1, 0);
+      renderSlider();
     });
-  });
 
-  whatsappButton?.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (whatsappButton.classList.contains('is-connecting')) return;
+    nextButton?.addEventListener('click', () => {
+      currentIndex = Math.min(currentIndex + 1, getMaxIndex());
+      renderSlider();
+    });
 
-    const defaultNode = whatsappButton.querySelector('[data-whatsapp-default]');
-    const loadingNode = whatsappButton.querySelector('[data-whatsapp-loading]');
-    const spinnerNode = whatsappButton.querySelector('[data-whatsapp-spinner]');
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = Math.min(index, getMaxIndex());
+        renderSlider();
+      });
+    });
 
-    whatsappButton.classList.add('is-connecting', 'bg-nasa-accent');
-    whatsappButton.classList.remove('bg-black');
-    defaultNode?.classList.add('hidden');
-    loadingNode?.classList.remove('hidden');
-    loadingNode?.classList.add('inline-flex');
-    spinnerNode?.classList.remove('hidden');
-
-    window.setTimeout(() => {
-      window.open(whatsappButton.getAttribute('href') || '#', '_blank', 'noopener,noreferrer');
-      whatsappButton.classList.remove('is-connecting', 'bg-nasa-accent');
-      whatsappButton.classList.add('bg-black');
-      defaultNode?.classList.remove('hidden');
-      loadingNode?.classList.add('hidden');
-      loadingNode?.classList.remove('inline-flex');
-      spinnerNode?.classList.add('hidden');
-    }, 1200);
-  });
+    window.addEventListener('resize', renderSlider);
+    renderSlider();
+  }
 </script>

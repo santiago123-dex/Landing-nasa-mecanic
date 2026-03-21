@@ -31,9 +31,11 @@ export const siteMeta = {
 export const services = [
   {
     id: '01.A',
-    title: 'Diagnostico Telemetrico',
-    desc: 'Escaneo profundo de la ECU. Analisis de mas de 10,000 puntos de datos en tiempo real para identificar fallos antes de que ocurran.',
+    title: 'Diagnostico por IA',
+    desc: 'Protege tu vehiculo contra fallos mediante nuestro estricto esquema de escaneo computarizado y telemetria avanzada.',
     icon: 'activity',
+    image:
+      'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=80',
     details: {
       time: '45-60 MIN',
       tools: [
@@ -47,9 +49,11 @@ export const services = [
   },
   {
     id: '01.B',
-    title: 'Optimizacion de Motor',
-    desc: 'Ajuste de precision milimetrica. Reprogramacion de parametros para maximizar rendimiento, torque y eficiencia termica.',
+    title: 'Performance Tuning',
+    desc: 'Servicio de reprogramacion y ajuste de motor para que tu auto alcance su maximo potencial y se sienta de maravilla en la pista.',
     icon: 'zap',
+    image:
+      'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80',
     details: {
       time: '2-4 HORAS',
       tools: [
@@ -63,9 +67,11 @@ export const services = [
   },
   {
     id: '01.C',
-    title: 'Calibracion de Chasis',
-    desc: 'Alineacion laser 3D y balanceo dinamico. Restauracion de la geometria original de fabrica para un manejo perfecto.',
+    title: 'Mecanica de Precision',
+    desc: 'Laboratorio equipado con la ultima tecnologia y especialistas para realizar reparaciones seguras y eficientes.',
     icon: 'crosshair',
+    image:
+      'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80',
     details: {
       time: '90 MIN',
       tools: [
@@ -79,9 +85,11 @@ export const services = [
   },
   {
     id: '01.D',
-    title: 'Mantenimiento Preventivo',
-    desc: 'Reemplazo de fluidos sinteticos de grado aeroespacial y revision de sistemas de seguridad criticos.',
+    title: 'Mantenimiento Especializado',
+    desc: 'Programas preventivos para conservar el rendimiento, la seguridad y la vida util de tu vehiculo con criterio tecnico.',
     icon: 'shield',
+    image:
+      'https://images.unsplash.com/photo-1613214149922-f1809c99b414?auto=format&fit=crop&w=1200&q=80',
     details: {
       time: '60-120 MIN',
       tools: [
@@ -103,9 +111,10 @@ export const marqueeItems = [
 ];
 
 export const navLinks = [
-  { href: '#servicios', label: 'Protocolos' },
-  { href: '#instalaciones', label: 'Laboratorio' },
-  { href: '#contacto', label: 'Terminal' },
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#nosotros', label: 'Nosotros' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#contacto', label: 'Contacto' },
 ];
 
 export const localBusinessSchema = {

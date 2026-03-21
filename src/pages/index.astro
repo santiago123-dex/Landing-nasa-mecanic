@@ -1,10 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import BootScreen from '../components/home/BootScreen.astro';
-import HudFrame from '../components/home/HudFrame.astro';
 import SiteHeader from '../components/home/SiteHeader.astro';
 import HeroSection from '../components/home/HeroSection.astro';
-import MarqueeBand from '../components/home/MarqueeBand.astro';
 import ServicesSection from '../components/home/ServicesSection.astro';
 import LabSection from '../components/home/LabSection.astro';
 import ContactSection from '../components/home/ContactSection.astro';
@@ -20,21 +17,14 @@ import { localBusinessSchema, siteMeta } from '../data/site';
   image={siteMeta.ogImage}
   schema={localBusinessSchema}
 >
-  <BootScreen />
-
-  <div id="site-shell" class="relative z-10 hidden">
-    <HudFrame />
-
-    <main class="mx-auto w-full max-w-[120rem] px-6 pt-10 pb-12 md:px-16 md:pt-16 lg:px-32">
-      <SiteHeader />
-      <HeroSection />
-      <MarqueeBand />
-      <ServicesSection />
-      <LabSection />
-      <ContactSection />
-      <SiteFooter />
-    </main>
-  </div>
+  <main class="w-full px-4 py-4 sm:px-6 sm:py-6 lg:px-10">
+    <SiteHeader />
+    <HeroSection />
+    <LabSection />
+    <ServicesSection />
+    <ContactSection />
+    <SiteFooter />
+  </main>
 
   <HomeScripts />
 </BaseLayout>
