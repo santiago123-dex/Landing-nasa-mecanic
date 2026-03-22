@@ -6,41 +6,39 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 
 <section
   id="contacto"
-  class="mt-10 grid gap-8 border-t border-black/6 px-1 py-14 sm:px-3 sm:py-16 lg:grid-cols-[minmax(360px,620px)_minmax(0,1fr)]"
+  class="mt-10 grid gap-7 border-t border-black/6 px-1 py-14 sm:px-3 sm:py-16 lg:grid-cols-[minmax(320px,560px)_minmax(0,1fr)]"
 >
-  <article data-reveal class={`${reveal} relative overflow-hidden rounded-[2.5rem] border border-slate-100 bg-[#fffefe] px-8 py-10 shadow-[0_18px_40px_rgba(15,23,42,0.06)] sm:px-10 sm:py-12`}>
-    <div class="absolute right-10 bottom-8 text-[11rem] leading-none font-light text-slate-100">∿</div>
+  <article data-reveal class={`${reveal} relative overflow-hidden rounded-[2.5rem] border border-slate-100 bg-[#fffefe] px-7 py-9 shadow-[0_18px_40px_rgba(15,23,42,0.06)] sm:px-9 sm:py-10`}>
+    <div class="absolute right-8 bottom-7 text-[10rem] leading-none font-light text-slate-100">∿</div>
 
     <div class="relative z-10">
-      <div class="mx-auto flex max-w-sm flex-col items-center text-center">
-        <span class="grid size-16 place-items-center rounded-2xl bg-nasa-accent text-white shadow-[0_16px_30px_rgba(239,12,24,0.22)]">
-          <svg class="size-8" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 12h4l2-5 4 10 2-5h6" />
-          </svg>
-        </span>
-        <h2 class="mt-6 mb-0 font-display text-[2.7rem] font-bold tracking-[-0.07em] text-nasa-text">NASA</h2>
-        <p class="mt-1 mb-0 text-sm font-bold uppercase tracking-[0.28em] text-nasa-accent">Auto Lab</p>
-        <p class="mt-10 mb-0 text-xl leading-[1.8] text-slate-400">¿Necesitas atencion automotriz de calidad?</p>
+      <div class="mx-auto flex max-w-[24rem] flex-col items-center text-center">
+        <img
+          src="/LOGO TALLER NASA N.png"
+          alt="NASA Auto Lab"
+          class="h-36 w-auto object-contain sm:h-44"
+        />
+        <p class="mt-8 mb-0 text-[1.15rem] leading-[1.8] text-slate-400">¿Necesitas atencion automotriz de calidad?</p>
         <p class="mt-2 mb-0 text-xl leading-[1.8] text-slate-400">Contactanos en NASA Auto Lab.</p>
-        <p class="mt-8 mb-0 text-[2rem] font-bold tracking-[-0.05em] text-nasa-text">Estamos aqui para cuidar de tu vehiculo.</p>
-        <a href={whatsappUrl} class="mt-4 text-[1.4rem] font-medium text-slate-400">Contactanos</a>
+        <p class="mt-7 mb-0 text-[1.8rem] font-bold tracking-[-0.05em] text-nasa-text">Estamos aqui para cuidar de tu vehiculo.</p>
+        <a href={whatsappUrl} class="mt-4 text-[1.25rem] font-medium text-slate-400">Contactanos</a>
       </div>
 
-      <div class="mt-12 space-y-7">
+      <div class="mt-10 space-y-6">
         <div class="flex items-center gap-4">
-          <span class="grid size-14 place-items-center rounded-full bg-[#fff3f4] text-nasa-accent">
+          <span class="grid size-13 place-items-center rounded-full bg-[#fff3f4] text-nasa-accent">
             <svg class="size-6" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 11.5A8.5 8.5 0 0 1 7.6 19l-3.6 1 1-3.5A8.5 8.5 0 1 1 20 11.5z" />
             </svg>
           </span>
           <div>
             <p class="m-0 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">WhatsApp</p>
-            <a href={whatsappUrl} class="mt-1 block text-[1.7rem] font-bold tracking-[-0.04em] text-nasa-text">+57 312 456 7890</a>
+            <a href={whatsappUrl} class="mt-1 block text-[1.55rem] font-bold tracking-[-0.04em] text-nasa-text">+57 323 366 1675</a>
           </div>
         </div>
 
         <div class="flex items-center gap-4">
-          <span class="grid size-14 place-items-center rounded-full bg-[#fff3f4] text-nasa-accent">
+          <span class="grid size-13 place-items-center rounded-full bg-[#fff3f4] text-nasa-accent">
             <svg class="size-6" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 6h16v12H4z" />
               <path d="M4 7l8 6 8-6" />
@@ -48,14 +46,14 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
           </span>
           <div>
             <p class="m-0 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Correo</p>
-            <a href="mailto:contacto@nasaautolab.com" class="mt-1 block text-[1.7rem] font-bold tracking-[-0.04em] text-nasa-text">
+            <a href="mailto:contacto@nasaautolab.com" class="mt-1 block text-[1.55rem] font-bold tracking-[-0.04em] text-nasa-text">
               contacto@nasaautolab.com
             </a>
           </div>
         </div>
 
         <div class="flex items-center gap-4">
-          <span class="grid size-14 place-items-center rounded-full bg-[#fff3f4] text-nasa-accent">
+          <span class="grid size-13 place-items-center rounded-full bg-[#fff3f4] text-nasa-accent">
             <svg class="size-6" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z" />
               <circle cx="12" cy="10" r="2.5" />
@@ -63,7 +61,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
           </span>
           <div>
             <p class="m-0 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Ubicacion</p>
-            <p class="mt-1 text-[1.55rem] leading-[1.5] font-bold tracking-[-0.04em] text-nasa-text">{siteMeta.address}</p>
+            <p class="mt-1 text-[1.4rem] leading-[1.5] font-bold tracking-[-0.04em] text-nasa-text">{siteMeta.address}</p>
           </div>
         </div>
       </div>
@@ -76,7 +74,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       title="Ubicacion de NASA Auto Lab"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      class="h-full min-h-[34rem] w-full border-0"
+      class="h-full min-h-[31rem] w-full border-0"
     ></iframe>
   </div>
 </section>

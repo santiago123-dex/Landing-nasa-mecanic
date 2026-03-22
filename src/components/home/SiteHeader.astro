@@ -9,14 +9,11 @@ import { navLinks, whatsappUrl } from '../../data/site';
   <div class="mx-auto w-full px-4 py-5 sm:px-6 lg:px-10">
     <div class="flex items-center justify-between gap-4">
       <a href="#inicio" class="flex items-center gap-3 text-nasa-text no-underline">
-        <span class="grid size-9 place-items-center rounded-lg bg-nasa-accent text-white shadow-[0_10px_20px_rgba(239,12,24,0.25)]">
-          <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 12h4l2-5 4 10 2-5h6" />
-          </svg>
-        </span>
-        <span class="font-display text-[1.8rem] font-bold tracking-[-0.07em]">
-          NASA<span class="text-black/55">.</span>LAB
-        </span>
+        <img
+          src="/LOGO TALLER NASA-02.png"
+          alt="NASA Auto Lab"
+          class="h-14 w-auto object-contain sm:h-16"
+        />
       </a>
 
       <nav class="hidden items-center gap-10 text-base font-semibold text-slate-600 lg:flex">
@@ -28,7 +25,7 @@ import { navLinks, whatsappUrl } from '../../data/site';
       <div class="flex items-center gap-3">
         <a
           href={whatsappUrl}
-          class="hidden rounded-full bg-nasa-accent px-7 py-4 text-sm font-bold text-white shadow-[0_14px_24px_rgba(239,12,24,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_30px_rgba(239,12,24,0.34)] sm:inline-flex"
+          class="hidden rounded-full bg-[#b83737] px-7 py-4 text-sm font-bold text-white shadow-[0_14px_24px_rgba(184,55,55,0.18)] transition hover:-translate-y-0.5 hover:bg-[#a93232] hover:shadow-[0_18px_30px_rgba(184,55,55,0.24)] sm:inline-flex"
         >
           Agendar Cita
         </a>
@@ -56,7 +53,7 @@ import { navLinks, whatsappUrl } from '../../data/site';
       {navLinks.map((link) => (
         <a class="transition hover:text-nasa-text" href={link.href}>{link.label}</a>
       ))}
-      <a href={whatsappUrl} class="mt-1 inline-flex w-full justify-center rounded-full bg-nasa-accent px-6 py-3 text-sm font-bold text-white">
+      <a href={whatsappUrl} class="mt-1 inline-flex w-full justify-center rounded-full bg-[#b83737] px-6 py-3 text-sm font-bold text-white">
         Agendar Cita
       </a>
     </nav>

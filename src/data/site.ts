@@ -1,5 +1,5 @@
 export const whatsappUrl =
-  'https://wa.me/1234567890?text=Hola%20NASA%20Auto%20Lab,%20solicito%20iniciar%20una%20secuencia%20de%20diagn%C3%B3stico.';
+  'https://wa.me/573233661675?text=Hola%20NASA%20Auto%20Lab,%20solicito%20informacion%20sobre%20sus%20servicios.';
 
 export const siteMeta = {
   name: 'NASA Auto Lab',
@@ -31,74 +31,92 @@ export const siteMeta = {
 export const services = [
   {
     id: '01.A',
-    title: 'Diagnostico por IA',
-    desc: 'Protege tu vehiculo contra fallos mediante nuestro estricto esquema de escaneo computarizado y telemetria avanzada.',
+    title: 'Mantenimiento preventivo',
+    desc: 'Inspeccion completa de puntos clave para prevenir averias, alargar la vida util del vehiculo y mantenerlo trabajando en optimas condiciones.',
     icon: 'activity',
-    image:
-      'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=80',
+    image: '/WhatsApp Image 2026-03-21 at 6.06.44 PM (1).jpeg',
+    imagePosition: 'center 58%',
     details: {
-      time: '45-60 MIN',
+      time: '60-90 MIN',
       tools: [
-        'Escaner OBD2 OEM Bidireccional',
-        'Osciloscopio Digital de 4 Canales',
-        'Analizador de Red CAN/LIN',
+        'Revision general de niveles',
+        'Inspeccion de filtros y correas',
+        'Chequeo preventivo de seguridad',
       ],
-      cost: '$80 - $150 USD',
+      cost: '$80 - $140 USD',
       link: '#protocolo-01-a',
     },
   },
   {
     id: '01.B',
-    title: 'Performance Tuning',
-    desc: 'Servicio de reprogramacion y ajuste de motor para que tu auto alcance su maximo potencial y se sienta de maravilla en la pista.',
+    title: 'Sincronizacion',
+    desc: 'Ajustamos el funcionamiento del motor para lograr una marcha mas estable, mejor respuesta al acelerar y un consumo mas eficiente.',
     icon: 'zap',
-    image:
-      'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80',
+    image: '/WhatsApp Image 2026-03-21 at 6.06.44 PM (2).jpeg',
+    imagePosition: 'center 35%',
     details: {
-      time: '2-4 HORAS',
+      time: '90-120 MIN',
       tools: [
-        'Dinamometro de Chasis',
-        'Interfaz de Reprogramacion Flash',
-        'Sondas Lambda de Banda Ancha',
+        'Calibracion de encendido',
+        'Ajuste de mezcla y respuesta',
+        'Diagnostico de funcionamiento',
       ],
-      cost: '$350 - $800 USD',
+      cost: '$100 - $180 USD',
       link: '#protocolo-01-b',
     },
   },
   {
     id: '01.C',
-    title: 'Mecanica de Precision',
-    desc: 'Laboratorio equipado con la ultima tecnologia y especialistas para realizar reparaciones seguras y eficientes.',
+    title: 'Frenos',
+    desc: 'Revisamos y corregimos el sistema de frenado para darte mayor seguridad, mejor respuesta en ruta y confianza en cada trayecto.',
     icon: 'crosshair',
-    image:
-      'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80',
+    image: '/WhatsApp Image 2026-03-21 at 6.06.45 PM.jpeg',
+    imagePosition: 'center 52%',
     details: {
-      time: '90 MIN',
+      time: '60-120 MIN',
       tools: [
-        'Alineadora Laser 3D de Alta Precision',
-        'Balanceadora Computarizada',
-        'Torquimetro Digital Calibrado',
+        'Revision de pastillas y discos',
+        'Cambio de liquido de frenos',
+        'Prueba de frenado y ajuste',
       ],
-      cost: '$120 - $250 USD',
+      cost: '$90 - $220 USD',
       link: '#protocolo-01-c',
     },
   },
   {
     id: '01.D',
-    title: 'Mantenimiento Especializado',
-    desc: 'Programas preventivos para conservar el rendimiento, la seguridad y la vida util de tu vehiculo con criterio tecnico.',
+    title: 'Cambio de aceite',
+    desc: 'Renovamos aceite y filtros con el producto adecuado para cuidar el motor, reducir desgaste y conservar su rendimiento diario.',
     icon: 'shield',
-    image:
-      'https://images.unsplash.com/photo-1613214149922-f1809c99b414?auto=format&fit=crop&w=1200&q=80',
+    image: '/WhatsApp Image 2026-03-21 at 6.06.45 PM (1).jpeg',
+    imagePosition: 'center 50%',
     details: {
-      time: '60-120 MIN',
+      time: '30-45 MIN',
       tools: [
-        'Fluidos Sinteticos de Alto Rendimiento',
-        'Filtros de Especificacion OEM',
-        'Camaras de Inspeccion Endoscopica',
+        'Aceite segun especificacion',
+        'Filtro nuevo de calidad',
+        'Revision de niveles complementarios',
       ],
-      cost: '$200 - $450 USD',
+      cost: '$40 - $90 USD',
       link: '#protocolo-01-d',
+    },
+  },
+  {
+    id: '01.E',
+    title: 'Suspension',
+    desc: 'Evaluamos y corregimos componentes de suspension para mejorar estabilidad, suavidad de manejo y control del vehiculo.',
+    icon: 'shield',
+    image: '/WhatsApp Image 2026-03-21 at 6.06.44 PM.jpeg',
+    imagePosition: 'center 48%',
+    details: {
+      time: '90-150 MIN',
+      tools: [
+        'Revision de amortiguadores',
+        'Chequeo de bujes y terminales',
+        'Prueba de estabilidad y desgaste',
+      ],
+      cost: '$120 - $260 USD',
+      link: '#protocolo-01-e',
     },
   },
 ] as const;

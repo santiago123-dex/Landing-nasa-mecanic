@@ -6,10 +6,10 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 
 <section
   id="inicio"
-  class="grid min-h-[calc(100vh-6rem)] gap-10 px-1 py-10 sm:px-3 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,612px)] lg:items-center lg:gap-14 lg:py-16"
+  class="grid min-h-[calc(100vh-6rem)] gap-6 px-1 py-10 sm:px-3 sm:py-14 lg:grid-cols-[minmax(0,0.95fr)_minmax(560px,780px)] lg:items-center lg:gap-5 lg:py-16 xl:grid-cols-[minmax(0,0.93fr)_minmax(620px,840px)]"
 >
-  <div data-reveal class={`${reveal} flex flex-col items-start`}>
-    <span class="mb-8 inline-flex items-center gap-2 rounded-full bg-[#fff2f3] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-nasa-accent">
+  <div data-reveal class={`${reveal} flex max-w-[36rem] flex-col items-start ml-20`}>
+    <span class="mb-8 inline-flex items-center gap-2 rounded-full bg-[#fcf2f2] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#b83737]">
       <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 12h4l2-5 4 10 2-5h6" />
         <path d="M18 5v4M16 7h4" />
@@ -17,19 +17,19 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       Excelencia automotriz
     </span>
 
-    <h1 class="m-0 text-[clamp(3.4rem,8vw,5.8rem)] leading-[0.9] tracking-[-0.08em] text-nasa-accent">
+    <h1 class="m-0 text-[clamp(3.4rem,8vw,5.8rem)] leading-[0.9] tracking-[-0.08em] text-[#b83737]">
       <span class="block font-display font-bold uppercase">NASA</span>
       <span class="mt-2 block text-[clamp(2.6rem,6vw,4.2rem)] font-light italic text-slate-500">Auto Lab</span>
     </h1>
 
-    <p class="mt-7 max-w-[34rem] text-lg leading-[1.75] text-slate-500 sm:text-[1.55rem] sm:leading-[1.7]">
+    <p class="mt-7 max-w-[32rem] text-lg leading-[1.75] text-slate-500 sm:text-[1.55rem] sm:leading-[1.7]">
       Ingenieria de excelencia y rigor profesional, con un equipo en constante formacion para proteger y optimizar tu vehiculo con integridad, garantizando un rendimiento de alta calidad.
     </p>
 
     <div class="mt-10 flex flex-col gap-4 sm:flex-row">
       <a
         href={whatsappUrl}
-        class="inline-flex items-center justify-center rounded-full bg-nasa-accent px-8 py-4 text-base font-bold text-white shadow-[0_16px_28px_rgba(239,12,24,0.26)] transition hover:-translate-y-0.5"
+        class="inline-flex items-center justify-center rounded-full bg-[#b83737] px-8 py-4 text-base font-bold text-white shadow-[0_14px_24px_rgba(184,55,55,0.16)] transition hover:-translate-y-0.5 hover:bg-[#a93232]"
       >
         Agendar Cita
       </a>
@@ -42,17 +42,16 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
     </div>
   </div>
 
-  <div data-reveal style="transition-delay:120ms" class={`${reveal} relative`}>
-    <div class="overflow-hidden rounded-[2.5rem] shadow-[0_28px_60px_rgba(15,23,42,0.18)]">
+  <div data-reveal style="transition-delay:120ms" class={`${reveal} relative justify-self-end`}>
+    <div class="aspect-[1.18/1] w-full overflow-hidden rounded-[2.5rem] shadow-[0_28px_60px_rgba(15,23,42,0.18)] lg:max-w-[760px]">
       <img
-        src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1400&q=80"
-        alt="Mecanico trabajando sobre el motor de un vehiculo"
-        referrerpolicy="no-referrer"
-        class="h-full min-h-[24rem] w-full object-cover"
+        src="/WhatsApp Image 2026-03-21 at 6.06.44 PM.jpeg"
+        alt="Vehiculo atendido en NASA Auto Lab"
+        class="h-full w-full object-cover"
       />
     </div>
     <div class="absolute bottom-[-1.1rem] left-[-1.1rem] grid grid-cols-4 gap-2 rounded-2xl bg-white/90 p-3 shadow-[0_20px_50px_rgba(15,23,42,0.12)]">
-      {Array.from({ length: 12 }).map(() => <span class="size-2 rounded-full bg-[#f6c7cb]"></span>)}
+      {Array.from({ length: 12 }).map(() => <span class="size-2 rounded-full bg-[#e7b4b4]"></span>)}
     </div>
   </div>
 </section>
