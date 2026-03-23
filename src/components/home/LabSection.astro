@@ -4,18 +4,18 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 
 <section
   id="nosotros"
-  class="mt-10 grid gap-10 border-t border-black/6 py-14 lg:grid-cols-[minmax(260px,0.78fr)_minmax(0,1fr)] lg:items-center lg:gap-12 lg:py-20 xl:gap-16"
+  class="mt-8 grid gap-8 border-t border-black/6 py-12 sm:mt-10 sm:py-14 md:justify-items-center md:gap-9 lg:grid-cols-[minmax(260px,0.78fr)_minmax(0,1fr)] lg:items-center lg:justify-items-stretch lg:gap-12 lg:py-20 xl:gap-16"
 >
-  <div data-reveal class={`${reveal} aspect-[0.98/1] overflow-hidden rounded-[2rem] shadow-[0_22px_45px_rgba(15,23,42,0.12)] sm:rounded-[2.5rem] lg:max-w-[30rem] xl:max-w-[32rem]`}>
+  <div data-reveal class={`${reveal} mx-auto w-full max-w-[24rem] overflow-hidden rounded-[1.85rem] shadow-[0_22px_45px_rgba(15,23,42,0.12)] sm:max-w-[26rem] sm:rounded-[2.2rem] md:max-w-[25rem] lg:max-w-[30rem] xl:max-w-[32rem]`}>
     <img
       src="/WhatsApp Image 2026-03-21 at 6.06.45 PM (1).jpeg"
       alt="Vehiculo atendido en NASA Auto Lab"
-      class="h-full w-full object-cover object-[center_42%]"
+      class="aspect-[1.28/1] h-full w-full object-cover object-[center_40%] sm:aspect-[1.18/1] md:aspect-[1.16/1] lg:aspect-[0.98/1] lg:object-[center_42%]"
     />
   </div>
 
-  <div data-reveal style="transition-delay:120ms" class={`${reveal}`}>
-    <span class="inline-flex items-center gap-2 rounded-full bg-[#fff2f3] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-nasa-accent">
+  <div data-reveal style="transition-delay:120ms" class={`${reveal} md:max-w-[44rem] md:text-center lg:max-w-none lg:text-left`}>
+    <span class="inline-flex items-center gap-2 rounded-full bg-[#fff2f3] px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-nasa-accent sm:text-[0.72rem] sm:tracking-[0.18em]">
       <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 12h4l2-5 4 10 2-5h6" />
         <path d="M18 5v4M16 7h4" />
@@ -23,15 +23,15 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       Nosotros
     </span>
 
-    <h2 class="mt-8 mb-0 max-w-[13ch] font-display text-[clamp(2.15rem,10vw,4.5rem)] leading-[1.04] font-bold tracking-[-0.07em] text-nasa-text">
+    <h2 class="mt-7 mb-0 max-w-[12ch] font-display text-[clamp(2.05rem,8.8vw,4.5rem)] leading-[1.02] font-bold tracking-[-0.06em] text-nasa-text">
       Pasion por el rendimiento y la precision mecanica
     </h2>
 
-    <p class="mt-6 max-w-[42rem] text-[0.98rem] leading-[1.75] text-slate-500 sm:mt-8 sm:text-[1.08rem] sm:leading-[1.7] lg:text-[1.24rem]">
+    <p class="mt-5 max-w-[40rem] text-[0.96rem] leading-[1.72] text-slate-500 sm:mt-7 sm:text-[1.04rem] sm:leading-[1.7] md:text-[1.08rem] lg:text-[1.24rem]">
       En nuestro Laboratorio Automotriz, entendemos que tu vehiculo es una maquina de precision. Desde NASA Auto Lab buscamos la mejora constante para brindar un servicio profesional y de calidad, ideal para el maximo desempeno de tu auto.
     </p>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
+    <div class="mt-8 grid gap-5 md:mt-9 md:grid-cols-2 md:gap-6 lg:mt-10 lg:gap-8">
       <article class="rounded-[2rem] bg-[#fffafb] p-5 sm:p-6">
         <span class="mb-5 grid size-12 place-items-center rounded-full bg-[#fff0f1] text-nasa-accent">
           <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
