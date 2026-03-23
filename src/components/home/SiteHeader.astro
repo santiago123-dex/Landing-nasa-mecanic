@@ -12,11 +12,11 @@ import { navLinks, whatsappUrl } from '../../data/site';
         <img
           src="/LOGO TALLER NASA-02.png"
           alt="NASA Auto Lab"
-          class="h-12 w-auto object-contain sm:h-14 lg:h-16"
+          class="h-12 w-auto object-contain sm:h-14 min-[960px]:h-15 lg:h-16"
         />
       </a>
 
-      <nav class="hidden items-center gap-6 text-sm font-semibold text-slate-600 xl:gap-8 xl:text-base 2xl:gap-10 lg:flex">
+      <nav class="hidden items-center gap-5 text-sm font-semibold text-slate-600 min-[960px]:flex xl:gap-8 xl:text-base 2xl:gap-10">
         {navLinks.map((link) => (
           <a class="transition hover:text-nasa-text" href={link.href}>{link.label}</a>
         ))}
@@ -25,7 +25,7 @@ import { navLinks, whatsappUrl } from '../../data/site';
       <div class="flex items-center gap-3">
         <a
           href={whatsappUrl}
-          class="hidden rounded-full bg-[#b83737] px-5 py-3 text-sm font-bold text-white shadow-[0_14px_24px_rgba(184,55,55,0.18)] transition hover:-translate-y-0.5 hover:bg-[#a93232] hover:shadow-[0_18px_30px_rgba(184,55,55,0.24)] lg:inline-flex xl:px-7 xl:py-4"
+          class="hidden rounded-full bg-[#b83737] px-5 py-3 text-sm font-bold text-white shadow-[0_14px_24px_rgba(184,55,55,0.18)] transition hover:-translate-y-0.5 hover:bg-[#a93232] hover:shadow-[0_18px_30px_rgba(184,55,55,0.24)] min-[1180px]:inline-flex xl:px-7 xl:py-4"
         >
           Agendar Cita
         </a>
@@ -35,7 +35,7 @@ import { navLinks, whatsappUrl } from '../../data/site';
           data-menu-toggle
           aria-expanded="false"
           aria-controls="mobile-nav"
-          class="grid size-11 place-items-center rounded-full border border-black/10 text-nasa-text lg:hidden"
+          class="grid size-11 place-items-center rounded-full border border-black/10 text-nasa-text min-[960px]:hidden"
         >
           <span class="sr-only">Abrir menu</span>
           <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
@@ -48,7 +48,7 @@ import { navLinks, whatsappUrl } from '../../data/site';
     <nav
       id="mobile-nav"
       data-mobile-nav
-      class="hidden flex-col gap-4 border-t border-black/8 pt-5 text-base font-semibold text-slate-600 lg:hidden"
+      class="hidden flex-col gap-4 border-t border-black/8 pt-5 text-base font-semibold text-slate-600 min-[960px]:hidden"
     >
       {navLinks.map((link) => (
         <a class="transition hover:text-nasa-text" href={link.href}>{link.label}</a>
