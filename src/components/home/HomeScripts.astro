@@ -33,13 +33,18 @@
   });
 
   const track = document.querySelector('[data-services-track]');
+  const viewport = document.querySelector('[data-services-viewport]');
   const prevButton = document.querySelector('[data-services-prev]');
   const nextButton = document.querySelector('[data-services-next]');
   const dots = Array.from(document.querySelectorAll('[data-services-dot]'));
 
-  if (track instanceof HTMLElement) {
+  if (track instanceof HTMLElement && viewport instanceof HTMLElement) {
     let currentIndex = 0;
     const cards = Array.from(track.children);
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let pointerId = -1;
 
     const getVisibleCards = () => {
       if (window.innerWidth >= 1280) return 3;
@@ -48,14 +53,20 @@
     };
 
     const getMaxIndex = () => Math.max(dots.length - getVisibleCards(), 0);
-
-    const renderSlider = () => {
-      currentIndex = Math.min(currentIndex, getMaxIndex());
-
+    const getCardMetrics = () => {
       const card = cards[0];
       const gap = 24;
       const cardWidth = card instanceof HTMLElement ? card.getBoundingClientRect().width : 0;
-      const offset = currentIndex * (cardWidth + gap);
+      return { gap, cardWidth };
+    };
+    const getOffsetForIndex = (index) => {
+      const { gap, cardWidth } = getCardMetrics();
+      return index * (cardWidth + gap);
+    };
+
+    const renderSlider = () => {
+      currentIndex = Math.min(currentIndex, getMaxIndex());
+      const offset = getOffsetForIndex(currentIndex);
       track.style.transform = `translateX(-${offset}px)`;
 
       dots.forEach((dot, index) => {
@@ -68,6 +79,16 @@
       nextButton?.toggleAttribute('disabled', currentIndex >= getMaxIndex());
       prevButton?.classList.toggle('opacity-40', currentIndex === 0);
       nextButton?.classList.toggle('opacity-40', currentIndex >= getMaxIndex());
+    };
+    const clampDragOffset = (dragOffset) => {
+      const minOffset = -getOffsetForIndex(getMaxIndex());
+      const maxOffset = 0;
+      return Math.min(maxOffset, Math.max(minOffset, dragOffset));
+    };
+    const renderDrag = () => {
+      const baseOffset = getOffsetForIndex(currentIndex);
+      const dragOffset = clampDragOffset(-baseOffset + (currentX - startX));
+      track.style.transform = `translateX(${dragOffset}px)`;
     };
 
     prevButton?.addEventListener('click', () => {
@@ -86,6 +107,48 @@
         renderSlider();
       });
     });
+
+    viewport.addEventListener('pointerdown', (event) => {
+      if (window.innerWidth >= 768) return;
+      if (!event.isPrimary) return;
+
+      isDragging = true;
+      pointerId = event.pointerId;
+      startX = event.clientX;
+      currentX = event.clientX;
+      track.style.transitionDuration = '0ms';
+      viewport.setPointerCapture(pointerId);
+    });
+
+    viewport.addEventListener('pointermove', (event) => {
+      if (!isDragging || event.pointerId !== pointerId) return;
+      currentX = event.clientX;
+      renderDrag();
+    });
+
+    const endDrag = (event) => {
+      if (!isDragging || event.pointerId !== pointerId) return;
+
+      const deltaX = currentX - startX;
+      const threshold = 50;
+
+      isDragging = false;
+      pointerId = -1;
+      track.style.transitionDuration = '';
+
+      if (Math.abs(deltaX) > threshold) {
+        if (deltaX < 0) {
+          currentIndex = Math.min(currentIndex + 1, getMaxIndex());
+        } else {
+          currentIndex = Math.max(currentIndex - 1, 0);
+        }
+      }
+
+      renderSlider();
+    };
+
+    viewport.addEventListener('pointerup', endDrag);
+    viewport.addEventListener('pointercancel', endDrag);
 
     window.addEventListener('resize', renderSlider);
     renderSlider();
