@@ -6,9 +6,9 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 
 <section
   id="contacto"
-  class="mt-10 grid gap-7 border-t border-black/6 px-1 py-14 sm:px-3 sm:py-16 lg:grid-cols-[minmax(320px,560px)_minmax(0,1fr)]"
+  class="mt-10 grid gap-7 border-t border-black/6 py-14 sm:py-16 lg:grid-cols-[minmax(320px,560px)_minmax(0,1fr)] xl:gap-10"
 >
-  <article data-reveal class={`${reveal} relative overflow-hidden rounded-[2.5rem] border border-slate-100 bg-[#fffefe] px-7 py-9 shadow-[0_18px_40px_rgba(15,23,42,0.06)] sm:px-9 sm:py-10`}>
+  <article data-reveal class={`${reveal} relative overflow-hidden rounded-[2rem] border border-slate-100 bg-[#fffefe] px-5 py-8 shadow-[0_18px_40px_rgba(15,23,42,0.06)] sm:rounded-[2.5rem] sm:px-8 sm:py-10 lg:px-9`}>
     <div class="pointer-events-none absolute right-4 bottom-3 text-[6rem] leading-none font-light text-slate-100 sm:right-8 sm:bottom-7 sm:text-[10rem]">∿</div>
 
     <div class="relative z-10">
@@ -16,12 +16,12 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
         <img
           src="/LOGO TALLER NASA N.png"
           alt="NASA Auto Lab"
-          class="h-36 w-auto object-contain sm:h-44"
+          class="h-28 w-auto object-contain sm:h-40"
         />
-        <p class="mt-8 mb-0 text-base leading-[1.8] text-slate-400 sm:text-[1.15rem]">¿Necesitas atencion automotriz de calidad?</p>
-        <p class="mt-2 mb-0 text-lg leading-[1.8] text-slate-400 sm:text-xl">Contactanos en NASA Auto Lab.</p>
-        <p class="mt-6 mb-0 text-[1.45rem] font-bold tracking-[-0.05em] text-nasa-text sm:mt-7 sm:text-[1.8rem]">Estamos aqui para cuidar de tu vehiculo.</p>
-        <a href={whatsappUrl} class="mt-4 text-lg font-medium text-slate-400 sm:text-[1.25rem]">Contactanos</a>
+        <p class="mt-6 mb-0 text-[0.98rem] leading-[1.8] text-slate-400 sm:mt-8 sm:text-[1.08rem]">¿Necesitas atencion automotriz de calidad?</p>
+        <p class="mt-2 mb-0 text-[1.02rem] leading-[1.8] text-slate-400 sm:text-[1.2rem]">Contactanos en NASA Auto Lab.</p>
+        <p class="mt-5 mb-0 text-[1.28rem] font-bold tracking-[-0.05em] text-nasa-text sm:mt-7 sm:text-[1.7rem]">Estamos aqui para cuidar de tu vehiculo.</p>
+        <a href={whatsappUrl} class="mt-4 text-[1rem] font-medium text-slate-400 sm:text-[1.15rem]">Contactanos</a>
       </div>
 
       <div class="mt-10 space-y-6">
@@ -33,7 +33,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
           </span>
           <div class="min-w-0">
             <p class="m-0 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">WhatsApp</p>
-            <a href={whatsappUrl} class="mt-1 block break-words text-[1.1rem] font-bold tracking-[-0.04em] text-nasa-text sm:text-[1.55rem]">+57 323 366 1675</a>
+            <a href={whatsappUrl} class="mt-1 block break-words text-[1rem] font-bold tracking-[-0.04em] text-nasa-text sm:text-[1.35rem] lg:text-[1.45rem]">+57 323 366 1675</a>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
           </span>
           <div class="min-w-0">
             <p class="m-0 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Correo</p>
-            <a href="mailto:contacto@nasaautolab.com" class="mt-1 block break-words text-[1.05rem] leading-[1.45] font-bold tracking-[-0.04em] text-nasa-text sm:text-[1.55rem]">
+            <a href="mailto:contacto@nasaautolab.com" class="mt-1 block break-words text-[0.98rem] leading-[1.45] font-bold tracking-[-0.04em] text-nasa-text sm:text-[1.25rem] lg:text-[1.4rem]">
               contacto@nasaautolab.com
             </a>
           </div>
@@ -61,7 +61,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
           </span>
           <div class="min-w-0">
             <p class="m-0 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Ubicacion</p>
-            <p class="mt-1 text-[1.05rem] leading-[1.5] font-bold tracking-[-0.04em] text-nasa-text sm:text-[1.4rem]">{siteMeta.address}</p>
+            <p class="mt-1 text-[0.98rem] leading-[1.5] font-bold tracking-[-0.04em] text-nasa-text sm:text-[1.2rem] lg:text-[1.3rem]">{siteMeta.address}</p>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       title="Ubicacion de NASA Auto Lab"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      class="h-full min-h-[31rem] w-full border-0"
+      class="h-full min-h-[24rem] w-full border-0 sm:min-h-[30rem]"
     ></iframe>
   </div>
 </section>

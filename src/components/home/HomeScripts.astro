@@ -59,7 +59,7 @@
       const cardWidth = card instanceof HTMLElement ? card.getBoundingClientRect().width : 0;
       return { gap, cardWidth };
     };
-    const getOffsetForIndex = (index) => {
+    const getOffsetForIndex = (index: number) => {
       const { gap, cardWidth } = getCardMetrics();
       return index * (cardWidth + gap);
     };
@@ -80,7 +80,7 @@
       prevButton?.classList.toggle('opacity-40', currentIndex === 0);
       nextButton?.classList.toggle('opacity-40', currentIndex >= getMaxIndex());
     };
-    const clampDragOffset = (dragOffset) => {
+    const clampDragOffset = (dragOffset: number) => {
       const minOffset = -getOffsetForIndex(getMaxIndex());
       const maxOffset = 0;
       return Math.min(maxOffset, Math.max(minOffset, dragOffset));
@@ -126,7 +126,7 @@
       renderDrag();
     });
 
-    const endDrag = (event) => {
+    const endDrag = (event: PointerEvent) => {
       if (!isDragging || event.pointerId !== pointerId) return;
 
       const deltaX = currentX - startX;
