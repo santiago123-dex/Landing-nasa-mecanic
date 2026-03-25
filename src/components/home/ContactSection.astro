@@ -6,9 +6,9 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 
 <section
   id="contacto"
-  class="mt-10 grid gap-7 border-t border-black/6 py-14 sm:py-16 lg:grid-cols-[minmax(320px,560px)_minmax(0,1fr)] xl:gap-10"
+  class="mt-12 grid gap-7 border-t border-black/6 py-14 sm:py-16 lg:grid-cols-[minmax(320px,560px)_minmax(0,1fr)] xl:gap-10"
 >
-  <article data-reveal class={`${reveal} relative overflow-hidden rounded-[2rem] border border-slate-100 bg-[#fffefe] px-5 py-8 shadow-[0_18px_40px_rgba(15,23,42,0.06)] sm:rounded-[2.5rem] sm:px-8 sm:py-10 lg:px-9`}>
+  <article data-reveal class={`${reveal} section-shell relative overflow-hidden rounded-[2rem] px-5 py-8 sm:rounded-[2.2rem] sm:px-8 sm:py-10 lg:px-9`}>
     <div class="pointer-events-none absolute right-4 bottom-3 text-[6rem] leading-none font-light text-slate-100 sm:right-8 sm:bottom-7 sm:text-[10rem]">∿</div>
 
     <div class="relative z-10">
@@ -18,10 +18,11 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
           alt="NASA Auto Lab"
           class="h-28 w-auto object-contain sm:h-40"
         />
-        <p class="mt-6 mb-0 text-[0.98rem] leading-[1.8] text-slate-400 sm:mt-8 sm:text-[1.08rem]">¿Necesitas atencion automotriz de calidad?</p>
-        <p class="mt-2 mb-0 text-[1.02rem] leading-[1.8] text-slate-400 sm:text-[1.2rem]">Contactanos en NASA Auto Lab.</p>
-        <p class="mt-5 mb-0 text-[1.28rem] font-bold tracking-[-0.05em] text-nasa-text sm:mt-7 sm:text-[1.7rem]">Estamos aqui para cuidar de tu vehiculo.</p>
-        <a href={whatsappUrl} class="mt-4 text-[1rem] font-medium text-slate-400 sm:text-[1.15rem]">Contactanos</a>
+        <p class="mt-6 mb-0 text-[0.98rem] leading-[1.8] text-nasa-muted sm:mt-8 sm:text-[1.08rem]">Agenda hoy y recibe una evaluacion profesional.</p>
+        <p class="mt-4 mb-0 text-[1.2rem] font-bold tracking-[-0.05em] text-nasa-text sm:text-[1.7rem]">Estamos listos para atender tu vehiculo.</p>
+        <a href={whatsappUrl} class="mt-5 inline-flex rounded-full bg-nasa-accent px-6 py-3 text-sm font-bold text-white shadow-[0_14px_26px_rgba(190,47,60,0.22)] transition hover:bg-nasa-accent-strong">
+          Escribir por WhatsApp
+        </a>
       </div>
 
       <div class="mt-10 space-y-6">
@@ -68,13 +69,13 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
     </div>
   </article>
 
-  <div data-reveal style="transition-delay:120ms" class={`${reveal} overflow-hidden rounded-[2.5rem] bg-[#171717] shadow-[0_18px_40px_rgba(15,23,42,0.16)]`}>
+  <div data-reveal style="transition-delay:120ms" class={`${reveal} section-shell overflow-hidden rounded-[2.2rem] p-3`}>
     <iframe
       src="https://maps.google.com/maps?q=Cl.%2015%20%2321A-03%2C%20Armenia%2C%20Quindio%2C%20Colombia&z=16&output=embed"
       title="Ubicacion de NASA Auto Lab"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      class="h-full min-h-[24rem] w-full border-0 sm:min-h-[30rem]"
+      class="h-full min-h-[24rem] w-full rounded-[1.5rem] border-0 sm:min-h-[30rem]"
     ></iframe>
   </div>
 </section>

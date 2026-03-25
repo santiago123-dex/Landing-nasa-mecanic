@@ -1,21 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-  --color-nasa-bg: #ffffff;
-  --color-nasa-surface: #f4f4f5;
-  --color-nasa-text: #09090b;
-  --color-nasa-accent: #b83737;
+  --color-nasa-bg: #f5f7fb;
+  --color-nasa-surface: #ffffff;
+  --color-nasa-surface-soft: #eef1f7;
+  --color-nasa-text: #0e1628;
+  --color-nasa-muted: #64708a;
+  --color-nasa-accent: #be2f3c;
+  --color-nasa-accent-strong: #8e1823;
+  --color-nasa-outline: #dbe2ee;
 
   --animate-marquee: marquee 20s linear infinite;
   --animate-pulse-soft: pulse-soft 1.6s ease-in-out infinite;
-  --animate-boot-progress: boot-progress 1.8s ease-in-out forwards;
-  --animate-boot-fade: boot-fade 500ms ease-out forwards;
   --animate-spin-slow: spin 3s linear infinite;
+  --animate-float-soft: float-soft 4s ease-in-out infinite;
 }
 
 @layer base {
@@ -33,7 +36,10 @@
     min-width: 320px;
     overflow-x: hidden;
     overflow-x: clip;
-    background: var(--color-nasa-bg);
+    background:
+      radial-gradient(1600px 480px at 15% -10%, rgb(190 47 60 / 0.09), transparent 65%),
+      radial-gradient(1300px 600px at 100% 0%, rgb(22 28 45 / 0.05), transparent 70%),
+      var(--color-nasa-bg);
     color: var(--color-nasa-text);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -85,6 +91,21 @@
   .screen-safe {
     min-height: 100vh;
   }
+
+  .glass-panel {
+    border: 1px solid rgb(255 255 255 / 0.9);
+    background: linear-gradient(140deg, rgb(255 255 255 / 0.95), rgb(255 255 255 / 0.78));
+    box-shadow:
+      0 20px 60px rgb(14 22 40 / 0.08),
+      inset 0 1px 0 rgb(255 255 255 / 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .section-shell {
+    border: 1px solid var(--color-nasa-outline);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.94), rgb(255 255 255 / 0.84));
+    box-shadow: 0 14px 42px rgb(15 23 42 / 0.06);
+  }
 }
 
 @supports (width: 100dvw) {
@@ -126,23 +147,17 @@
   }
 }
 
-@keyframes boot-progress {
+@keyframes float-soft {
   from {
-    transform: scaleX(0);
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
   }
 
   to {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes boot-fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
+    transform: translateY(0px);
   }
 }
 

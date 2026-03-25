@@ -16,20 +16,33 @@
 
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileNav = document.querySelector('[data-mobile-nav]');
+  const mobileBackdrop = document.querySelector('[data-mobile-backdrop]');
+
+  const closeMobileNav = () => {
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    mobileNav?.classList.add('hidden');
+    mobileNav?.classList.remove('flex');
+    mobileBackdrop?.classList.add('hidden');
+  };
 
   menuToggle?.addEventListener('click', () => {
     const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', String(!expanded));
     mobileNav?.classList.toggle('hidden', expanded);
     mobileNav?.classList.toggle('flex', !expanded);
+    mobileBackdrop?.classList.toggle('hidden', expanded);
   });
 
   mobileNav?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      menuToggle?.setAttribute('aria-expanded', 'false');
-      mobileNav?.classList.add('hidden');
-      mobileNav?.classList.remove('flex');
+      closeMobileNav();
     });
+  });
+
+  mobileBackdrop?.addEventListener('click', closeMobileNav);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMobileNav();
   });
 
   const track = document.querySelector('[data-services-track]');
@@ -52,10 +65,10 @@
       return 1;
     };
 
-    const getMaxIndex = () => Math.max(dots.length - getVisibleCards(), 0);
+    const getMaxIndex = () => Math.max(cards.length - getVisibleCards(), 0);
     const getCardMetrics = () => {
       const card = cards[0];
-      const gap = 24;
+      const gap = Number.parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '24');
       const cardWidth = card instanceof HTMLElement ? card.getBoundingClientRect().width : 0;
       return { gap, cardWidth };
     };
@@ -70,7 +83,7 @@
       track.style.transform = `translateX(-${offset}px)`;
 
       dots.forEach((dot, index) => {
-        const active = index === currentIndex;
+        const active = index === currentIndex || (currentIndex > getMaxIndex() && index === getMaxIndex());
         dot.classList.toggle('bg-nasa-accent', active);
         dot.classList.toggle('bg-slate-300', !active);
       });
@@ -150,7 +163,11 @@
     viewport.addEventListener('pointerup', endDrag);
     viewport.addEventListener('pointercancel', endDrag);
 
-    window.addEventListener('resize', renderSlider);
+    let resizeTimeout: number | null = null;
+    window.addEventListener('resize', () => {
+      if (resizeTimeout) window.clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(renderSlider, 90);
+    });
     renderSlider();
   }
 </script>

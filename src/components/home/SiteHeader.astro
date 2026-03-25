@@ -4,28 +4,28 @@ import { navLinks, whatsappUrl } from '../../data/site';
 
 <header
   data-reveal
-  class="sticky top-0 z-30 -mx-4 mb-8 border-b border-black/8 bg-white/96 opacity-0 backdrop-blur transition duration-700 ease-out translate-y-8 sm:-mx-6 md:mb-14 lg:-mx-8 xl:-mx-10"
+  class="sticky top-0 z-40 -mx-4 mb-8 border-b border-nasa-outline/80 bg-white/82 opacity-0 backdrop-blur-xl transition duration-700 ease-out translate-y-8 sm:-mx-6 md:mb-14 lg:-mx-8 xl:-mx-10"
 >
   <div class="mx-auto w-full max-w-[1600px] px-4 py-4 sm:px-6 sm:py-5 lg:px-8 xl:px-10 2xl:px-12">
     <div class="flex items-center justify-between gap-4">
-      <a href="#inicio" class="flex items-center gap-3 text-nasa-text no-underline">
+      <a href="#inicio" class="group flex items-center gap-3 text-nasa-text no-underline">
         <img
           src="/LOGO TALLER NASA-02.png"
           alt="NASA Auto Lab"
-          class="h-10 w-auto object-contain sm:h-11 md:h-10 lg:h-14 xl:h-16"
+          class="h-10 w-auto object-contain transition duration-300 group-hover:scale-[1.02] sm:h-11 md:h-10 lg:h-14 xl:h-16"
         />
       </a>
 
-      <nav class="hidden items-center gap-6 text-sm font-semibold text-slate-600 xl:gap-8 xl:text-base 2xl:gap-10 lg:flex">
+      <nav class="hidden items-center gap-6 text-sm font-semibold text-slate-500 xl:gap-8 xl:text-base 2xl:gap-10 lg:flex">
         {navLinks.map((link) => (
-          <a class="transition hover:text-nasa-text" href={link.href}>{link.label}</a>
+          <a class="relative transition hover:text-nasa-text after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-nasa-accent after:transition hover:after:scale-x-100" href={link.href}>{link.label}</a>
         ))}
       </nav>
 
       <div class="flex items-center gap-3">
         <a
           href={whatsappUrl}
-          class="hidden rounded-full bg-[#b83737] px-5 py-3 text-sm font-bold text-white shadow-[0_14px_24px_rgba(184,55,55,0.18)] transition hover:-translate-y-0.5 hover:bg-[#a93232] hover:shadow-[0_18px_30px_rgba(184,55,55,0.24)] lg:inline-flex xl:px-7 xl:py-4"
+          class="hidden rounded-full bg-nasa-accent px-5 py-3 text-sm font-bold text-white shadow-[0_16px_30px_rgba(190,47,60,0.24)] transition hover:-translate-y-0.5 hover:bg-nasa-accent-strong hover:shadow-[0_18px_34px_rgba(190,47,60,0.32)] lg:inline-flex xl:px-7 xl:py-4"
         >
           Agendar Cita
         </a>
@@ -35,7 +35,7 @@ import { navLinks, whatsappUrl } from '../../data/site';
           data-menu-toggle
           aria-expanded="false"
           aria-controls="mobile-nav"
-          class="grid size-11 place-items-center rounded-full border border-black/10 text-nasa-text lg:hidden"
+          class="grid size-11 place-items-center rounded-full border border-nasa-outline bg-white text-nasa-text shadow-[0_8px_20px_rgba(14,22,40,0.08)] lg:hidden"
         >
           <span class="sr-only">Abrir menu</span>
           <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
@@ -45,15 +45,19 @@ import { navLinks, whatsappUrl } from '../../data/site';
       </div>
     </div>
 
+    <div data-mobile-backdrop class="fixed inset-0 z-30 hidden bg-[#0e1628]/35 lg:hidden"></div>
     <nav
       id="mobile-nav"
       data-mobile-nav
-      class="hidden flex-col gap-4 border-t border-black/8 pt-5 text-base font-semibold text-slate-600 lg:hidden"
+      class="glass-panel fixed top-[4.7rem] right-4 left-4 z-40 hidden flex-col gap-2 rounded-3xl p-4 text-base font-semibold text-slate-600 shadow-[0_24px_50px_rgba(14,22,40,0.2)] lg:hidden"
     >
       {navLinks.map((link) => (
-        <a class="transition hover:text-nasa-text" href={link.href}>{link.label}</a>
+        <a class="rounded-xl px-4 py-3 transition hover:bg-nasa-surface-soft hover:text-nasa-text" href={link.href}>{link.label}</a>
       ))}
-      <a href={whatsappUrl} class="mt-1 inline-flex w-full justify-center rounded-full bg-[#b83737] px-6 py-3 text-sm font-bold text-white">
+      <a
+        href={whatsappUrl}
+        class="mt-2 inline-flex w-full justify-center rounded-full bg-nasa-accent px-6 py-3.5 text-sm font-bold text-white shadow-[0_14px_30px_rgba(190,47,60,0.24)]"
+      >
         Agendar Cita
       </a>
     </nav>

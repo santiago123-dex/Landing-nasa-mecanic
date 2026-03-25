@@ -4,9 +4,9 @@ export const whatsappUrl =
 export const siteMeta = {
   name: 'NASA Auto Lab',
   shortName: 'NASA Auto Lab',
-  title: 'NASA Auto Lab | Diagnostico automotriz avanzado en Armenia, Quindio',
+  title: 'NASA Auto Lab | Precision automotriz en Armenia, Quindio',
   description:
-    'Laboratorio automotriz en Armenia, Quindio, especializado en diagnostico computarizado, mantenimiento predictivo, calibracion laser y optimizacion de motor.',
+    'Laboratorio automotriz en Armenia, Quindio, especializado en mantenimiento preventivo, sincronizacion, frenos, suspension y cambio de aceite con estandar profesional.',
   keywords: [
     'taller automotriz en Armenia Quindio',
     'diagnostico automotriz',
@@ -32,7 +32,7 @@ export const services = [
   {
     id: '01.A',
     title: 'Mantenimiento preventivo',
-    desc: 'Inspeccion completa de puntos clave para prevenir averias, alargar la vida util del vehiculo y mantenerlo trabajando en optimas condiciones.',
+    desc: 'Inspeccion integral de puntos criticos para prevenir fallas, reducir desgaste y mantener el vehiculo confiable en el dia a dia.',
     icon: 'activity',
     image: '/WhatsApp Image 2026-03-21 at 6.06.44 PM (1).jpeg',
     imagePosition: 'center 58%',
@@ -50,7 +50,7 @@ export const services = [
   {
     id: '01.B',
     title: 'Sincronizacion',
-    desc: 'Ajustamos el funcionamiento del motor para lograr una marcha mas estable, mejor respuesta al acelerar y un consumo mas eficiente.',
+    desc: 'Calibramos el motor para mejorar respuesta, estabilidad de marcha y eficiencia, con chequeo de parametros clave.',
     icon: 'zap',
     image: '/WhatsApp Image 2026-03-21 at 6.06.44 PM (2).jpeg',
     imagePosition: 'center 35%',
@@ -68,7 +68,7 @@ export const services = [
   {
     id: '01.C',
     title: 'Frenos',
-    desc: 'Revisamos y corregimos el sistema de frenado para darte mayor seguridad, mejor respuesta en ruta y confianza en cada trayecto.',
+    desc: 'Diagnostico y ajuste del sistema de frenado para garantizar seguridad, control y respuesta consistente en ruta.',
     icon: 'crosshair',
     image: '/WhatsApp Image 2026-03-21 at 6.06.45 PM.jpeg',
     imagePosition: 'center 52%',
@@ -86,7 +86,7 @@ export const services = [
   {
     id: '01.D',
     title: 'Cambio de aceite',
-    desc: 'Renovamos aceite y filtros con el producto adecuado para cuidar el motor, reducir desgaste y conservar su rendimiento diario.',
+    desc: 'Cambio de aceite y filtro con especificacion adecuada para proteger el motor y conservar un rendimiento estable.',
     icon: 'shield',
     image: '/WhatsApp Image 2026-03-21 at 6.06.45 PM (1).jpeg',
     imagePosition: 'center 50%',
@@ -104,7 +104,7 @@ export const services = [
   {
     id: '01.E',
     title: 'Suspension',
-    desc: 'Evaluamos y corregimos componentes de suspension para mejorar estabilidad, suavidad de manejo y control del vehiculo.',
+    desc: 'Revision y correccion de suspension para recuperar estabilidad, confort de marcha y precision de maniobra.',
     icon: 'shield',
     image: '/WhatsApp Image 2026-03-21 at 6.06.44 PM.jpeg',
     imagePosition: 'center 48%',
@@ -134,6 +134,33 @@ export const navLinks = [
   { href: '#servicios', label: 'Servicios' },
   { href: '#contacto', label: 'Contacto' },
 ];
+
+export const heroHighlights = [
+  'Diagnostico profesional',
+  'Estandar tecnico confiable',
+  'Atencion personalizada',
+] as const;
+
+export const trustStats = [
+  { value: '+8', label: 'anos de experiencia' },
+  { value: '+2k', label: 'vehiculos atendidos' },
+  { value: '98%', label: 'clientes recurrentes' },
+] as const;
+
+export const pillars = [
+  {
+    title: 'Rigor tecnico',
+    desc: 'Cada servicio sigue un protocolo claro para reducir errores y garantizar resultados consistentes.',
+  },
+  {
+    title: 'Equipo actualizado',
+    desc: 'Combinamos experiencia practica con formacion continua para resolver casos reales con criterio profesional.',
+  },
+  {
+    title: 'Confianza total',
+    desc: 'Te explicamos el estado del vehiculo y las recomendaciones con transparencia, sin sorpresas.',
+  },
+] as const;
 
 export const localBusinessSchema = {
   '@context': 'https://schema.org',

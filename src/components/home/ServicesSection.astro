@@ -6,10 +6,10 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 
 <section
   id="servicios"
-  class="mt-10 border-t border-black/6 py-14 sm:py-16"
+  class="mt-12 border-t border-black/6 py-14 sm:mt-14 sm:py-16"
 >
   <div data-reveal class={`${reveal} md:text-center xl:text-left`}>
-    <span class="inline-flex items-center gap-2 rounded-full bg-[#fff2f3] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-nasa-accent">
+    <span class="inline-flex items-center gap-2 rounded-full border border-[#f3d7db] bg-[#fff3f4] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-nasa-accent">
       <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 12h4l2-5 4 10 2-5h6" />
         <path d="M18 5v4M16 7h4" />
@@ -17,20 +17,20 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       Servicios
     </span>
 
-    <h2 class="mt-8 mb-0 max-w-[10ch] font-display text-[clamp(2.15rem,10vw,4.5rem)] leading-[1.03] font-bold tracking-[-0.07em] text-nasa-text md:mx-auto md:text-center xl:mx-0 xl:text-left">
-      Cuidado integral para tu maquina
+    <h2 class="mt-8 mb-0 max-w-[11ch] font-display text-[clamp(2.2rem,9vw,4.7rem)] leading-[1.02] font-bold tracking-[-0.07em] text-nasa-text md:mx-auto md:text-center xl:mx-0 xl:text-left">
+      Soluciones que elevan tu rendimiento
     </h2>
 
-    <p class="mt-6 max-w-[52rem] text-[0.98rem] leading-[1.8] text-slate-500 sm:mt-8 sm:text-[1.08rem] md:mx-auto xl:mx-0 xl:text-[1.24rem]">
-      Contamos con una amplia gama de servicios especializados, tecnologia de punta y el mejor equipo tecnico profesional para cubrir todas las necesidades de rendimiento y mantenimiento de tu vehiculo.
+    <p class="mt-6 max-w-[58rem] text-[0.98rem] leading-[1.8] text-nasa-muted sm:mt-8 sm:text-[1.08rem] md:mx-auto xl:mx-0 xl:text-[1.2rem]">
+      Disenamos cada servicio para darte confiabilidad mecanica, respuesta precisa y una experiencia clara de principio a fin.
     </p>
   </div>
 
-  <div data-reveal style="transition-delay:120ms" class={`${reveal} relative mt-12 lg:px-16 xl:px-20 2xl:px-24`}>
+  <div data-reveal style="transition-delay:120ms" class={`${reveal} relative mt-12 lg:px-14 xl:px-18 2xl:px-22`}>
     <button
       type="button"
       data-services-prev
-      class="absolute top-[34%] left-0 z-10 hidden rounded-full bg-black p-4 text-white shadow-[0_16px_30px_rgba(15,23,42,0.18)] transition hover:scale-[1.03] xl:p-5 lg:grid lg:place-items-center"
+      class="absolute top-[34%] left-0 z-10 hidden rounded-full bg-nasa-text p-4 text-white shadow-[0_16px_30px_rgba(15,23,42,0.2)] transition hover:scale-[1.03] hover:bg-nasa-accent lg:grid lg:place-items-center xl:p-5"
       aria-label="Servicio anterior"
     >
       <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
@@ -42,20 +42,23 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       <div data-services-track class="flex gap-6 transition-transform duration-500 ease-out">
         {services.map((service) => (
           <article
-            class="min-w-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_10px_24px_rgba(15,23,42,0.06)] md:min-w-[calc((100%-1.5rem)/2)] xl:min-w-[calc((100%-3rem)/3)]"
+            class="section-shell min-w-full overflow-hidden rounded-[2rem] md:min-w-[calc((100%-1.5rem)/2)] xl:min-w-[calc((100%-3rem)/3)]"
           >
             <div class="h-52 overflow-hidden bg-[#f7f7f8] sm:h-56 xl:h-52 2xl:h-56">
               <img
                 src={service.image}
                 alt={service.title}
                 style={`object-position: ${service.imagePosition || 'center center'};`}
-                class="h-full w-full object-cover"
+                class="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
               />
             </div>
             <div class="p-5 sm:p-8">
-              <h3 class="m-0 text-[1.6rem] font-bold tracking-[-0.05em] text-nasa-text sm:text-[2rem]">{service.title}</h3>
-              <p class="mt-4 mb-0 min-h-0 text-base leading-[1.7] text-slate-500 sm:min-h-[7.5rem] sm:text-lg">{service.desc}</p>
-              <a href={whatsappUrl} class="mt-6 inline-flex items-center gap-2 text-base font-bold text-nasa-accent sm:mt-8 sm:text-lg">
+              <div class="inline-flex rounded-full border border-nasa-outline bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-nasa-accent">
+                {service.id}
+              </div>
+              <h3 class="mt-4 m-0 text-[1.58rem] font-bold tracking-[-0.05em] text-nasa-text sm:text-[1.95rem]">{service.title}</h3>
+              <p class="mt-4 mb-0 min-h-0 text-base leading-[1.72] text-nasa-muted sm:min-h-[7.5rem] sm:text-lg">{service.desc}</p>
+              <a href={whatsappUrl} class="mt-6 inline-flex items-center gap-2 text-base font-bold text-nasa-accent transition hover:text-nasa-accent-strong sm:mt-8 sm:text-lg">
                 Agendar Servicio
                 <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M9 6l6 6-6 6" />
@@ -70,7 +73,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
     <button
       type="button"
       data-services-next
-      class="absolute top-[34%] right-0 z-10 hidden rounded-full bg-black p-4 text-white shadow-[0_16px_30px_rgba(15,23,42,0.18)] transition hover:scale-[1.03] xl:p-5 lg:grid lg:place-items-center"
+      class="absolute top-[34%] right-0 z-10 hidden rounded-full bg-nasa-text p-4 text-white shadow-[0_16px_30px_rgba(15,23,42,0.2)] transition hover:scale-[1.03] hover:bg-nasa-accent lg:grid lg:place-items-center xl:p-5"
       aria-label="Servicio siguiente"
     >
       <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
@@ -79,7 +82,7 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
     </button>
   </div>
 
-  <div class="mt-8 flex items-center justify-center gap-2" data-services-dots>
+  <div class="mt-8 flex items-center justify-center gap-2.5" data-services-dots>
     {services.map((_, index) => (
       <button
         type="button"

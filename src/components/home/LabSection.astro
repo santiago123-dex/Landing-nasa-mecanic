@@ -1,21 +1,15 @@
 ---
+import { pillars } from '../../data/site';
+
 const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
 ---
 
 <section
   id="nosotros"
-  class="mt-8 grid gap-8 border-t border-black/6 py-12 sm:mt-10 sm:py-14 md:justify-items-center md:gap-9 xl:grid-cols-[minmax(260px,0.78fr)_minmax(0,1fr)] xl:items-center xl:justify-items-stretch xl:gap-12 xl:py-20 2xl:gap-16"
+  class="mt-12 border-t border-black/6 py-14 sm:mt-14 sm:py-16 xl:py-20"
 >
-  <div data-reveal class={`${reveal} order-2 mx-auto w-full max-w-[24rem] overflow-hidden rounded-[1.85rem] shadow-[0_22px_45px_rgba(15,23,42,0.12)] sm:max-w-[26rem] sm:rounded-[2.2rem] md:max-w-[25rem] xl:order-1 xl:max-w-[30rem] 2xl:max-w-[32rem]`}>
-    <img
-      src="/WhatsApp Image 2026-03-21 at 6.06.45 PM (1).jpeg"
-      alt="Vehiculo atendido en NASA Auto Lab"
-      class="aspect-[1.28/1] h-full w-full object-cover object-[center_40%] sm:aspect-[1.18/1] md:aspect-[1.16/1] xl:aspect-[0.98/1] xl:object-[center_42%]"
-    />
-  </div>
-
-  <div data-reveal style="transition-delay:120ms" class={`${reveal} order-1 md:mx-auto md:flex md:max-w-[40rem] md:flex-col md:items-center md:text-center xl:order-2 xl:mx-0 xl:block xl:max-w-none xl:items-stretch xl:text-left`}>
-    <span class="inline-flex items-center gap-2 rounded-full bg-[#fff2f3] px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-nasa-accent sm:text-[0.72rem] sm:tracking-[0.18em]">
+  <div data-reveal class={`${reveal} mx-auto max-w-[68rem] text-center`}>
+    <span class="inline-flex items-center gap-2 rounded-full border border-[#f3d7db] bg-[#fff3f4] px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-nasa-accent">
       <svg class="size-4" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 12h4l2-5 4 10 2-5h6" />
         <path d="M18 5v4M16 7h4" />
@@ -23,40 +17,42 @@ const reveal = 'opacity-0 translate-y-8 transition duration-700 ease-out';
       Nosotros
     </span>
 
-    <h2 class="mt-7 mb-0 max-w-[12ch] font-display text-[clamp(2.05rem,8.8vw,4.5rem)] leading-[1.02] font-bold tracking-[-0.06em] text-nasa-text md:mx-auto xl:mx-0">
-      Pasion por el rendimiento y la precision mecanica
+    <h2 class="mx-auto mt-7 mb-0 max-w-[16ch] font-display text-[clamp(2.1rem,8vw,4.7rem)] leading-[1.02] font-bold tracking-[-0.065em] text-nasa-text">
+      Tecnologia, criterio y acompanamiento en cada servicio
     </h2>
 
-    <p class="mt-5 max-w-[40rem] text-[0.96rem] leading-[1.72] text-slate-500 sm:mt-7 sm:text-[1.04rem] sm:leading-[1.7] md:mx-auto md:text-[1.08rem] xl:mx-0 xl:text-[1.24rem]">
-      En nuestro Laboratorio Automotriz, entendemos que tu vehiculo es una maquina de precision. Desde NASA Auto Lab buscamos la mejora constante para brindar un servicio profesional y de calidad, ideal para el maximo desempeno de tu auto.
+    <p class="mx-auto mt-6 max-w-[56rem] text-[1rem] leading-[1.8] text-nasa-muted sm:text-[1.1rem] xl:text-[1.2rem]">
+      En NASA Auto Lab construimos confianza con procesos claros, personal calificado y atencion centrada en resultados reales. Nuestro enfoque combina precision mecanica y comunicacion transparente.
     </p>
+  </div>
 
-    <div class="mt-8 grid gap-5 md:mt-9 md:w-full md:max-w-[40rem] md:grid-cols-2 md:gap-6 xl:mt-10 xl:max-w-none xl:gap-8">
-      <article class="rounded-[2rem] bg-[#fffafb] p-5 sm:p-6">
-        <span class="mb-5 grid size-12 place-items-center rounded-full bg-[#fff0f1] text-nasa-accent">
-          <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="8" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
-        </span>
-        <h3 class="m-0 text-[1.45rem] font-bold tracking-[-0.05em] text-nasa-text sm:text-[1.8rem]">Nuestra Mision</h3>
-        <p class="mt-4 mb-0 text-[0.98rem] leading-[1.7] text-slate-500 sm:text-[1.05rem]">
-          Brindar tranquilidad y seguridad a los conductores a traves de una ingenieria automotriz de excelencia, con rigor profesional, actualizacion cientifica constante y honestidad tecnica.
-        </p>
-      </article>
+  <div class="mt-11 grid gap-5 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] xl:mt-14 xl:gap-8">
+    <article data-reveal class={`${reveal} section-shell overflow-hidden rounded-[2rem] p-3`}>
+      <div class="relative overflow-hidden rounded-[1.35rem]">
+        <img
+          src="/WhatsApp Image 2026-03-21 at 6.06.45 PM (1).jpeg"
+          alt="Equipo de trabajo en NASA Auto Lab"
+          class="aspect-[1.15/1] w-full object-cover object-[center_40%]"
+        />
+        <div class="absolute inset-0 bg-linear-to-t from-[#0e1628]/45 to-transparent"></div>
+        <div class="absolute right-4 bottom-4 left-4 flex flex-wrap gap-2">
+          <span class="rounded-full bg-white/92 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-nasa-text">Diagnostico serio</span>
+          <span class="rounded-full bg-white/92 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-nasa-text">Procesos claros</span>
+        </div>
+      </div>
+    </article>
 
-      <article class="rounded-[2rem] bg-[#fffafb] p-5 sm:p-6">
-        <span class="mb-5 grid size-12 place-items-center rounded-full bg-[#fff0f1] text-nasa-accent">
-          <svg class="size-5" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z" />
-            <circle cx="12" cy="12" r="2.5" />
-          </svg>
-        </span>
-        <h3 class="m-0 text-[1.45rem] font-bold tracking-[-0.05em] text-nasa-text sm:text-[1.8rem]">Nuestra Vision</h3>
-        <p class="mt-4 mb-0 text-[0.98rem] leading-[1.7] text-slate-500 sm:text-[1.05rem]">
-          Para el 2030, ser el laboratorio automotriz lider en innovacion y tecnologia, reconocidos por transformar el mantenimiento vehicular en una experiencia de precision integral.
-        </p>
-      </article>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      {pillars.map((pillar, index) => (
+        <article
+          data-reveal
+          style={`transition-delay:${120 + index * 80}ms`}
+          class={`${reveal} section-shell rounded-[1.5rem] p-6`}
+        >
+          <h3 class="m-0 font-display text-[1.45rem] font-bold tracking-[-0.05em] text-nasa-text">{pillar.title}</h3>
+          <p class="mt-3 mb-0 text-[0.98rem] leading-[1.7] text-nasa-muted">{pillar.desc}</p>
+        </article>
+      ))}
     </div>
   </div>
 </section>
